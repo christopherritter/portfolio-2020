@@ -20,6 +20,7 @@ export default {
 <style scoped>
   .about-me {
     margin: 176px 0;
+    line-height: 1.7;
     text-align: center;
   } 
 </style>

@@ -39,17 +39,30 @@
 
 <style>
 #app {
-  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  font-family: "Roboto Light", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size: 1.25rem;
+  line-height: 1.65;
   color: #222222;
 }
 
 #nav {
   font-family: "Montserrat", Helvetica, Arial, sans-serif;
+  font-size: 0.875rem;
+}
+
+#nav .navbar-brand {
+  font-family: "Montserrat SemiBold", Helvetica, Arial, sans-serif;
+  font-size: 0.875rem;
+}
+
+#nav .active.router-link-active {
+  font-family: "Montserrat SemiBold", Helvetica, Arial, sans-serif;
 }
 
 #footer {
+  font-size: 0.875rem;
   padding: 0;
   margin: 150px 0 0 0;
 }
@@ -71,21 +84,38 @@
   padding: 0;
 }
 
-h1,
-h2,
-h3,
-h4 {
-  font-family: "Montserrat", Helvetica, Arial, sans-serif;
+h1 {
+  font-size: 4.5rem !important;
 }
 
-h5,
+h1,
+h2 {
+  font-family: "Montserrat", Helvetica, Arial, sans-serif;
+  margin-bottom: 1.5rem;
+}
+
+h3,
+h4,
+h5 {
+  font-family: "Montserrat SemiBold", Helvetica, Arial, sans-serif;
+}
+
 h6 {
-  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  font-family: "Roboto Medium", Helvetica, Arial, sans-serif;
+  font-size: 1.2rem !important;
 }
 
 @media (min-width: 1200px) {
   .container {
     max-width: 960px !important;
   }
+}
+
+p {
+  margin-bottom: 1.5rem;
+}
+
+.lead {
+  line-height: 2.5rem;
 }
 </style>

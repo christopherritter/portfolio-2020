@@ -9,7 +9,7 @@
         <div class="project-image"></div>
         <b-row>
           <b-col>
-            <h5 class="project-name">{{ project.name }}</h5>
+            <h6 class="project-name">{{ project.name }}</h6>
           </b-col>
           <b-col cols="8">
             <p class="project-description">{{ project.description }}</p>
@@ -79,9 +79,11 @@ a {
   width: 100%;
   height: 540px;
   background-color: #edf1f4;
+  
 }
 .project-name,
 .project-description {
   margin: 12px;
+  line-height: 1.65;
 }
 </style>
