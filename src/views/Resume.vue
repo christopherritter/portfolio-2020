@@ -66,6 +66,19 @@
   </b-container>
 </template>
 
+<script>
+import projects from "@/data.js";
+
+export default {
+  name: "resume",
+  data() {
+    return {
+      projects
+    };
+  }
+};
+</script>
+
 <style scoped>
 .resume-name {
   margin-top: 10rem;
