@@ -5,21 +5,13 @@
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
       <b-collapse id="nav-collapse" is-nav>
         <b-navbar-nav class="ml-auto">
-          <b-nav-item
-            to="/"
-            exact
-            exact-active-class="active"
-          >Work</b-nav-item>
-          <b-nav-item
-            to="/about"
-            exact
-            exact-active-class="active"
-          >About</b-nav-item>
-          <b-nav-item
-            to="/resume"
-            exact
-            exact-active-class="active"
-          >Resume</b-nav-item>
+          <b-nav-item to="/" exact exact-active-class="active">Work</b-nav-item>
+          <b-nav-item to="/about" exact exact-active-class="active"
+            >About</b-nav-item
+          >
+          <b-nav-item to="/resume" exact exact-active-class="active"
+            >Resume</b-nav-item
+          >
         </b-navbar-nav>
       </b-collapse>
     </b-navbar>
@@ -27,7 +19,10 @@
     <b-container id="footer" class="text-light bg-dark" fluid>
       <b-container class="download-resume">
         <h3>Download a copy of my resume</h3>
-        <p>Download an updated copy of my resume in Adobe PDF or Microsoft Word format.</p>
+        <p>
+          Download an updated copy of my resume in Adobe PDF or Microsoft Word
+          format.
+        </p>
       </b-container>
       <hr />
       <b-container class="copyright-info">

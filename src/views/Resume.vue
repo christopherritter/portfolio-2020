@@ -3,15 +3,14 @@
     <b-row>
       <b-col>
         <h1 class="resume-name">Christopher Ritter</h1>
-        <h4 class="resume-title">User Experience Designer / Front-End Developer</h4>
+        <h4 class="resume-title">
+          User Experience Designer / Front-End Developer
+        </h4>
       </b-col>
     </b-row>
 
     <b-row class="resume-abilities-header">
-      <b-col
-        cols="6"
-        class="bullet-header"
-      >Skills</b-col>
+      <b-col cols="6" class="bullet-header">Skills</b-col>
       <b-col class="bullet-header">Tools</b-col>
       <b-col class="bullet-header">Tech</b-col>
     </b-row>
@@ -64,7 +63,6 @@
         </div>
       </b-col>
     </b-row>
-
   </b-container>
 </template>
 
