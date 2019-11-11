@@ -10,7 +10,10 @@
     </b-row>
 
     <b-row class="resume-abilities-header">
-      <b-col cols="6" class="bullet-header">Skills</b-col>
+      <b-col
+        cols="6"
+        class="bullet-header"
+      >Skills</b-col>
       <b-col class="bullet-header">Tools</b-col>
       <b-col class="bullet-header">Tech</b-col>
     </b-row>
@@ -48,21 +51,27 @@
       </b-col>
     </b-row>
 
-    <b-row class="company-header">
-      <b-col>
-        <h2 class="company-name">Jenzabar</h2>
-        <span class="company-role">UX/UI Designer, 2015 - Today</span>
-      </b-col>
-    </b-row>
+    <div
+      class="employers"
+      v-for="company in this.$store.state.employers"
+      v-bind:key="company.id"
+    >
+      <b-row class="company-header">
+        <b-col>
+          <h2 class="company-name">{{ company.name }}</h2>
+          <span class="company-role">{{ company.title }}, {{ company.startDate }} - {{ company.endDate }}</span>
+        </b-col>
+      </b-row>
 
-    <b-row class="company-tasks">
-      <b-col>
-        <div class="bullet-item">
-          <div class="bullet"></div>
-          <div class="bullet-text">Brainstorming</div>
-        </div>
-      </b-col>
-    </b-row>
+      <b-row class="company-tasks">
+        <b-col>
+          <div class="bullet-item">
+            <div class="bullet"></div>
+            <div class="bullet-text">Brainstorming</div>
+          </div>
+        </b-col>
+      </b-row>
+    </div>
   </b-container>
 </template>
 
@@ -71,7 +80,10 @@ import store from "@/store";
 
 export default {
   name: "resume",
-  store
+  store,
+  data() {
+    return this.$store.state;
+  }
 };
 </script>
 

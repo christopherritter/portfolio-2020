@@ -5,181 +5,173 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    companies: [
+    employers: [
       {
         id: 0,
         title: "User Experience Designer",
-        company: "Jenzabar, Inc.",
+        name: "Jenzabar, Inc.",
         startDate: 2015,
         endDate: "Now",
-        projects: [
+        products: [
           {
             id: 0,
-            product: "Jenzabar ICS 9",
+            name: "Find Your Calling",
             description:
-              "Refactored ASP.Net ASCX templates for the online portal to utilize Bootstrap/Sass for responsive layouts.",
-            skills: [
-              {
-                label: "UI",
-                isActive: true
-              },
-              {
-                label: "Bootstrap",
-                isActive: false
-              },
-              {
-                label: "Sass",
-                isActive: false
-              },
-              {
-                label: "ASCX",
-                isActive: false
-              },
-              {
-                label: "Prototyping",
-                isActive: false
-              },
-              {
-                label: "XD",
-                isActive: false
-              }
-            ],
-            deliverables: [
-              {
-                id: 0,
-                title: "Jenzabar ICS Design System",
-                img: "img/JICS-Design-System_Home.png",
-                description:
-                  "A new design system was created for Jenzabar ICS portlets completely from scratch using the application to display ASP.Net content."
-              },
-              {
-                id: 1,
-                title: "Design System Components",
-                img: "img/JICS-Design-System_Tables.png",
-                description:
-                  "Code samples were provided alongside functional examples of the Components which are constructed from ASP.Net Web Controls, and include the necessary Bootstrap to assist the developers."
-              }
-            ],
-            showTask: true,
-            showDeliverable: false
+              "Online quiz which identifies the users career paths and connects them with relevant educational instutions.",
+            path: "fyc"
           },
           {
             id: 1,
-            product: "Jenzabar CX 10",
+            name: "Jenzabar ICS 9",
             description:
-              "Developed the front-end for the desktop solution using QT Creator.",
-            skills: [
+              "Online web portal which provides access to CX customer data through the Internet.",
+            projects: [
               {
-                label: "UX",
-                isActive: true
-              },
-              {
-                label: "UI",
-                isActive: true
-              },
-              {
-                label: "Prototyping",
-                isActive: false
-              },
-              {
-                label: "XD",
-                isActive: false
-              },
-              {
-                label: "Research",
-                isActive: false
-              },
-              {
-                label: "Analysis",
-                isActive: false
-              },
-              {
-                label: "Reporting",
-                isActive: false
-              },
-              {
-                label: "QT",
-                isActive: false
-              },
-              {
-                label: "QSS",
-                isActive: false
-              }
-            ],
-            deliverables: [
-              {
-                id: 0,
-                title: "CX 10 Home Screen",
-                img: "img/CX10-Home.png",
                 description:
-                  "The home screen for CX 10 provides users with a searchable directory of their available applications. When the user launches an application it appears on a recently viewed list next to the directory."
+                  "Refactored ASP.Net ASCX templates for the online portal to utilize Bootstrap/Sass for responsive layouts.",
+                skills: [
+                  {
+                    label: "UI",
+                    isActive: true
+                  },
+                  {
+                    label: "Bootstrap",
+                    isActive: false
+                  },
+                  {
+                    label: "Sass",
+                    isActive: false
+                  },
+                  {
+                    label: "ASCX",
+                    isActive: false
+                  },
+                  {
+                    label: "Prototyping",
+                    isActive: false
+                  },
+                  {
+                    label: "XD",
+                    isActive: false
+                  }
+                ],
+                deliverables: [
+                  {
+                    id: 0,
+                    title: "Jenzabar ICS Design System",
+                    img: "img/JICS-Design-System_Home.png",
+                    description:
+                      "A new design system was created for Jenzabar ICS portlets completely from scratch using the application to display ASP.Net content."
+                  },
+                  {
+                    id: 1,
+                    title: "Design System Components",
+                    img: "img/JICS-Design-System_Tables.png",
+                    description:
+                      "Code samples were provided alongside functional examples of the Components which are constructed from ASP.Net Web Controls, and include the necessary Bootstrap to assist the developers."
+                  }
+                ]
               }
             ],
-            showTask: true,
-            showDeliverable: false
+            path: "jics9"
           },
           {
             id: 2,
-            product: "Jenzabar JX",
+            name: "Jenzabar CX 10",
             description:
-              "Developed prototypes using SmartGWT to demonstrate interactions and responsive layouts.",
-            skills: [
+              "Jenzabar JX is a desktop version of CX that completely transforms the user experience.",
+            projects: [
               {
-                label: "UX",
-                isActive: true
-              },
-              {
-                label: "UI",
-                isActive: true
-              },
-              {
-                label: "SmartGWT",
-                isActive: false
-              },
-              {
-                label: "Prototyping",
-                isActive: false
+                description:
+                  "Developed the front-end for the desktop solution using QT Creator.",
+                skills: [
+                  {
+                    label: "UX",
+                    isActive: true
+                  },
+                  {
+                    label: "UI",
+                    isActive: true
+                  },
+                  {
+                    label: "Prototyping",
+                    isActive: false
+                  },
+                  {
+                    label: "XD",
+                    isActive: false
+                  },
+                  {
+                    label: "Research",
+                    isActive: false
+                  },
+                  {
+                    label: "Analysis",
+                    isActive: false
+                  },
+                  {
+                    label: "Reporting",
+                    isActive: false
+                  },
+                  {
+                    label: "QT",
+                    isActive: false
+                  },
+                  {
+                    label: "QSS",
+                    isActive: false
+                  }
+                ],
+                deliverables: [
+                  {
+                    id: 0,
+                    title: "CX 10 Home Screen",
+                    img: "img/CX10-Home.png",
+                    description:
+                      "The home screen for CX 10 provides users with a searchable directory of their available applications. When the user launches an application it appears on a recently viewed list next to the directory."
+                  }
+                ]
               }
             ],
-            showTask: true,
-            showDeliverable: false
+            path: "cx10"
           },
           {
             id: 3,
-            product: "Jenzabar JX",
+            name: "Jenzabar JX",
             description:
-              "Provided design assistance to local, remote, and offshore development teams by delivering wireframes and various UI elements (fonts, icons, colors) within an Agile environment.",
-            skills: [
+              "Jenzabar JX offers a suite of tools for colleges and universities built in Java and Smart GWT.",
+            projects: [
               {
-                label: "UX",
-                isActive: true
-              },
-              {
-                label: "UI",
-                isActive: true
-              },
-              {
-                label: "Agile",
-                isActive: false
-              },
-              {
-                label: "Remote",
-                isActive: false
-              },
-              {
-                label: "Offshore",
-                isActive: false
+                description:
+                  "Developed prototypes using SmartGWT to demonstrate interactions and responsive layouts.",
+                skills: [
+                  {
+                    label: "UX",
+                    isActive: true
+                  },
+                  {
+                    label: "UI",
+                    isActive: true
+                  },
+                  {
+                    label: "SmartGWT",
+                    isActive: false
+                  },
+                  {
+                    label: "Prototyping",
+                    isActive: false
+                  }
+                ]
               }
             ],
-            showTask: true,
-            showDeliverable: false
+            path: "jx"
           }
         ]
       },
       {
         id: 1,
         title: "Interface Design Consultant",
-        company: "Crown Equipment",
+        name: "Crown Equipment",
         startDate: 2015,
         endDate: 2015,
         location: "New Bremen, Ohio",
@@ -231,7 +223,7 @@ export default new Vuex.Store({
       {
         id: 2,
         title: "User Experience Designer",
-        company: "Trimble Navigation",
+        name: "Trimble Navigation",
         startDate: 2014,
         endDate: 2015,
         location: "Huber Heights, Ohio",
@@ -370,7 +362,7 @@ export default new Vuex.Store({
       {
         id: 3,
         title: "Idea Designer",
-        company: "LexisNexis",
+        name: "LexisNexis",
         startDate: 2010,
         endDate: 2013,
         location: "Miamisburg, Ohio",
@@ -497,7 +489,7 @@ export default new Vuex.Store({
       {
         id: 4,
         title: "Experience Planner",
-        company: "Bridge Worldwide",
+        name: "Bridge Worldwide",
         startDate: 2009,
         endDate: 2010,
         location: "Cincinnati, Ohio",
