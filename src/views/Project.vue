@@ -1,18 +1,13 @@
 <template>
-  <b-container class="about">
-    <b-row>
-      <b-col>
-        <h1 class="resume-name">Christopher Ritter</h1>
-        <h4 class="resume-title">
-          User Experience Designer / Front-End Developer
-        </h4>
-      </b-col>
-    </b-row>
+  <b-container class="project">
+    <h2 class="project-name">{{ project.name }}</h2>
+    <p class="project-description">{{ project.description }}</p>
+
+    <div class="project-image"></div>
 
     <b-row class="resume-abilities-header">
-      <b-col cols="6" class="bullet-header">Skills</b-col>
-      <b-col class="bullet-header">Tools</b-col>
-      <b-col class="bullet-header">Tech</b-col>
+      <b-col cols="6" class="bullet-header">My role</b-col>
+      <b-col cols="6" class="bullet-header">Client</b-col>
     </b-row>
 
     <b-row class="resume-abilities">
@@ -42,29 +37,10 @@
       </b-col>
     </b-row>
 
-    <b-row class="resume-section">
-      <b-col>
-        <h5>Experience</h5>
-      </b-col>
-    </b-row>
+    <hr />
 
-    <div
-      class="employers"
-      v-for="company in this.$store.state.employers"
-      v-bind:key="company.id"
-    >
-      <b-row class="company-header">
-        <b-col>
-          <h2 class="company-name">{{ company.name }}</h2>
-          <span class="company-role"
-            >{{ company.title }}, {{ company.startDate }} -
-            {{ company.endDate }}</span
-          >
-        </b-col>
-      </b-row>
-
-      <div class="company-tasks" v-for="task in taskList" v-bind:key="task.id">
-        <b-row v-if="company.name == task.employer" class="tasks">
+    <div class="company-tasks" v-for="task in taskList" v-bind:key="task.id">
+        <b-row v-if="project.name == task.project" class="tasks">
           <b-col>
             <div class="bullet-item">
               <div class="bullet"></div>
@@ -73,7 +49,7 @@
           </b-col>
         </b-row>
       </div>
-    </div>
+
   </b-container>
 </template>
 
@@ -81,14 +57,23 @@
 import store from "@/store";
 
 export default {
-  name: "resume",
+  name: "project",
   store,
-  data() {
-    return {
-      store
-    };
-  },
   computed: {
+    project() {
+      let project_slug = this.$route.params.project_slug;
+      let projects = this.$store.getters.projects;
+      let project = {};
+
+      for (let p = 0; p < projects.length; p++) {
+        if (projects[p].path == project_slug.toLowerCase()) {
+          project = projects[p];
+        }
+      }
+
+      return project;
+      // return projects;
+    },
     taskList() {
       return this.$store.getters.tasks;
     }
@@ -97,19 +82,17 @@ export default {
 </script>
 
 <style scoped>
-.resume-name {
-  margin-top: 10rem;
-  margin-bottom: 0;
+hr {
+  margin: 3em 0;
 }
-.resume-title {
-  font-family: "Montserrat", Helvetica, Arial, sans-serif;
-  margin-bottom: 10rem;
+.project-name {
+  margin: 4em 0 0.5em 0;
 }
-.resume-section {
-  margin-bottom: 3rem;
-}
-.resume-abilities {
-  margin-bottom: 8rem;
+.project-image {
+  width: 100%;
+  height: 540px;
+  background-color: #edf1f4;
+  margin: 6em 0 3em 0;
 }
 .bullet-header {
   font-family: "Montserrat SemiBold", Helvetica, Arial, sans-serif;
@@ -128,18 +111,5 @@ export default {
 .bullet-text {
   margin-top: -2.05rem;
   text-indent: 1.25rem;
-}
-.company-header {
-  margin-bottom: 1em;
-}
-.company-name {
-  margin-bottom: 0.25rem;
-}
-.company-role {
-  font-family: "Montserrat", Helvetica, Arial, sans-serif;
-  font-size: 1.5rem;
-}
-.employers {
-  margin-bottom: 72px;
 }
 </style>

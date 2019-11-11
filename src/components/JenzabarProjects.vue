@@ -13,6 +13,9 @@
           </b-col>
           <b-col cols="8">
             <p class="project-description">{{ project.description }}</p>
+            <a :href="'projects/' + project.path" class="project-path"
+              >More info</a
+            >
           </b-col>
         </b-row>
       </b-col>

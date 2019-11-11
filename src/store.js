@@ -18,7 +18,12 @@ export default new Vuex.Store({
             name: "Find Your Calling",
             description:
               "Online quiz which identifies the users career paths and connects them with relevant educational instutions.",
-            tasks: [],
+            tasks: [
+              {
+                description:
+                  "Implemented Pattern Lab to deliver the new front end for Find Your Calling."
+              }
+            ],
             path: "fyc"
           },
           {
@@ -66,7 +71,7 @@ export default new Vuex.Store({
             tasks: [
               {
                 description:
-                  "Developed the front-end for the desktop solution using QT Creator.",
+                  "Redesigned the front-end for the desktop version of Jenzabar CX using QT Creator.",
                 skills: [
                   "UX",
                   "UI",
@@ -99,7 +104,15 @@ export default new Vuex.Store({
             tasks: [
               {
                 description:
-                  "Developed prototypes using SmartGWT to demonstrate interactions and responsive layouts.",
+                  "Provided design assistance to local, remote, and offshore development teams."
+              },
+              {
+                description:
+                  "Delivered wireframes and various UI elements (fonts, icons, colors) within an Agile environment."
+              },
+              {
+                description:
+                  "Developed Java prototypes using SmartGWT to demonstrate interactions and responsive layouts.",
                 skills: ["UX", "UI", "SmartGWT", "Prototyping"]
               }
             ],
@@ -251,10 +264,10 @@ export default new Vuex.Store({
                   "Prototyping"
                 ]
               }
-            ]
+            ],
+            path: "lexisadvance"
           }
-        ],
-        path: "lexisadvance"
+        ]
       },
       {
         id: 4,
@@ -322,7 +335,9 @@ export default new Vuex.Store({
             for (let p = 0; p < state.employers[e].projects.length; p++) {
               let project = {
                 id: p,
-                name: state.employers[e].projects[p].name
+                description: state.employers[e].projects[p].description,
+                name: state.employers[e].projects[p].name,
+                path: state.employers[e].projects[p].path
               };
 
               projects.push(project);
@@ -348,7 +363,8 @@ export default new Vuex.Store({
                 ) {
                   let task = {
                     id: t,
-                    name: state.employers[e].projects[p].tasks[t].description,
+                    description:
+                      state.employers[e].projects[p].tasks[t].description,
                     project: state.employers[e].projects[p].name,
                     employer: state.employers[e].name
                   };
