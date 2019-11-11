@@ -67,15 +67,11 @@
 </template>
 
 <script>
-import projects from "@/data.js";
+import store from "@/store";
 
 export default {
   name: "resume",
-  data() {
-    return {
-      projects
-    };
-  }
+  store
 };
 </script>
 
