@@ -10,10 +10,7 @@
     </b-row>
 
     <b-row class="resume-abilities-header">
-      <b-col
-        cols="6"
-        class="bullet-header"
-      >Skills</b-col>
+      <b-col cols="6" class="bullet-header">Skills</b-col>
       <b-col class="bullet-header">Tools</b-col>
       <b-col class="bullet-header">Tech</b-col>
     </b-row>
@@ -59,15 +56,18 @@
       <b-row class="company-header">
         <b-col>
           <h2 class="company-name">{{ company.name }}</h2>
-          <span class="company-role">{{ company.title }}, {{ company.startDate }} - {{ company.endDate }}</span>
+          <span class="company-role"
+            >{{ company.title }}, {{ company.startDate }} -
+            {{ company.endDate }}</span
+          >
         </b-col>
       </b-row>
 
-      <b-row class="company-tasks">
+      <b-row class="company-tasks" v-for="project in company.projects" v-bind:key="project.id">
         <b-col>
           <div class="bullet-item">
             <div class="bullet"></div>
-            <div class="bullet-text">Brainstorming</div>
+            <div class="bullet-text">{{ project.description }}</div>
           </div>
         </b-col>
       </b-row>
@@ -82,7 +82,9 @@ export default {
   name: "resume",
   store,
   data() {
-    return this.$store.state;
+    return {
+      store
+    };
   }
 };
 </script>
@@ -128,5 +130,8 @@ export default {
 .company-role {
   font-family: "Montserrat", Helvetica, Arial, sans-serif;
   font-size: 1.5rem;
+}
+.employers {
+  margin-bottom: 72px;
 }
 </style>

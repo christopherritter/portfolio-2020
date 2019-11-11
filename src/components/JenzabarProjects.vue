@@ -1,18 +1,18 @@
 <template>
   <div class="jenzabar-projects">
     <b-row
-      class="product"
-      v-for="product in this.$store.state.employers[0].products"
-      v-bind:key="product.id"
+      class="project"
+      v-for="project in this.$store.state.employers[0].projects"
+      v-bind:key="project.id"
     >
       <b-col>
-        <div class="product-image"></div>
+        <div class="project-image"></div>
         <b-row>
           <b-col>
-            <h6 class="product-name">{{ product.name }}</h6>
+            <h6 class="project-name">{{ project.name }}</h6>
           </b-col>
           <b-col cols="8">
-            <p class="product-description">{{ product.description }}</p>
+            <p class="project-description">{{ project.description }}</p>
           </b-col>
         </b-row>
       </b-col>
@@ -27,7 +27,9 @@ export default {
   name: "JenzabarProjects",
   store,
   data() {
-    return this.$store.state;
+    return {
+      store
+    };
   }
 };
 </script>
@@ -45,16 +47,16 @@ li {
 a {
   color: #2f89fc;
 }
-.product {
+.project {
   margin-bottom: 72px;
 }
-.product-image {
+.project-image {
   width: 100%;
   height: 540px;
   background-color: #edf1f4;
 }
-.product-name,
-.product-description {
+.project-name,
+.project-description {
   margin: 12px;
   line-height: 1.65;
 }

@@ -12,12 +12,13 @@ export default new Vuex.Store({
         name: "Jenzabar, Inc.",
         startDate: 2015,
         endDate: "Now",
-        products: [
+        projects: [
           {
             id: 0,
             name: "Find Your Calling",
             description:
               "Online quiz which identifies the users career paths and connects them with relevant educational instutions.",
+            tasks: [],
             path: "fyc"
           },
           {
@@ -25,35 +26,17 @@ export default new Vuex.Store({
             name: "Jenzabar ICS 9",
             description:
               "Online web portal which provides access to CX customer data through the Internet.",
-            projects: [
+            tasks: [
               {
                 description:
                   "Refactored ASP.Net ASCX templates for the online portal to utilize Bootstrap/Sass for responsive layouts.",
                 skills: [
-                  {
-                    label: "UI",
-                    isActive: true
-                  },
-                  {
-                    label: "Bootstrap",
-                    isActive: false
-                  },
-                  {
-                    label: "Sass",
-                    isActive: false
-                  },
-                  {
-                    label: "ASCX",
-                    isActive: false
-                  },
-                  {
-                    label: "Prototyping",
-                    isActive: false
-                  },
-                  {
-                    label: "XD",
-                    isActive: false
-                  }
+                  "UI",
+                  "Bootstrap",
+                  "Sass",
+                  "ASCX",
+                  "Prototyping",
+                  "XD"
                 ],
                 deliverables: [
                   {
@@ -80,47 +63,20 @@ export default new Vuex.Store({
             name: "Jenzabar CX 10",
             description:
               "Jenzabar JX is a desktop version of CX that completely transforms the user experience.",
-            projects: [
+            tasks: [
               {
                 description:
                   "Developed the front-end for the desktop solution using QT Creator.",
                 skills: [
-                  {
-                    label: "UX",
-                    isActive: true
-                  },
-                  {
-                    label: "UI",
-                    isActive: true
-                  },
-                  {
-                    label: "Prototyping",
-                    isActive: false
-                  },
-                  {
-                    label: "XD",
-                    isActive: false
-                  },
-                  {
-                    label: "Research",
-                    isActive: false
-                  },
-                  {
-                    label: "Analysis",
-                    isActive: false
-                  },
-                  {
-                    label: "Reporting",
-                    isActive: false
-                  },
-                  {
-                    label: "QT",
-                    isActive: false
-                  },
-                  {
-                    label: "QSS",
-                    isActive: false
-                  }
+                  "UX",
+                  "UI",
+                  "Prototyping",
+                  "XD",
+                  "Research",
+                  "Analysis",
+                  "Reporting",
+                  "QT",
+                  "QSS"
                 ],
                 deliverables: [
                   {
@@ -140,28 +96,11 @@ export default new Vuex.Store({
             name: "Jenzabar JX",
             description:
               "Jenzabar JX offers a suite of tools for colleges and universities built in Java and Smart GWT.",
-            projects: [
+            tasks: [
               {
                 description:
                   "Developed prototypes using SmartGWT to demonstrate interactions and responsive layouts.",
-                skills: [
-                  {
-                    label: "UX",
-                    isActive: true
-                  },
-                  {
-                    label: "UI",
-                    isActive: true
-                  },
-                  {
-                    label: "SmartGWT",
-                    isActive: false
-                  },
-                  {
-                    label: "Prototyping",
-                    isActive: false
-                  }
-                ]
+                skills: ["UX", "UI", "SmartGWT", "Prototyping"]
               }
             ],
             path: "jx"
@@ -178,45 +117,25 @@ export default new Vuex.Store({
         projects: [
           {
             id: 0,
-            description:
-              "Contracted to provide front-end assistance for Crown Equipment to implement a responsive design for their corporate site managed by Adobe Experience Manager.",
-            skills: [
+            name: "Crown.com",
+            description: "Primary website for Crown, Inc.",
+            tasks: [
               {
-                label: "UX",
-                isActive: true
-              },
-              {
-                label: "UI",
-                isActive: true
-              },
-              {
-                label: "AEM",
-                isActive: false
-              },
-              {
-                label: "Bootstrap",
-                isActive: false
-              },
-              {
-                label: "Sass",
-                isActive: false
-              },
-              {
-                label: "Grunt",
-                isActive: false
-              }
-            ],
-            deliverables: [
-              {
-                id: 0,
-                title: "Crown Industries Rebranding",
-                img: "img/Crown-Website.png",
                 description:
-                  "Adobe Experience Manager was used to rollout the new brand for Crown Industries. Bootstrap was used to display numerous components in a responsive layout, along with Sass to manage the CSS, which was compiled as part of the build process using Grunt."
+                  "Contracted to provide front-end assistance for Crown Equipment to implement a responsive design for their corporate site managed by Adobe Experience Manager.",
+                skills: ["UX", "UI", "AEM", "Bootstrap", "Sass", "Grunt"],
+                deliverables: [
+                  {
+                    id: 0,
+                    title: "Crown Industries Rebranding",
+                    img: "img/Crown-Website.png",
+                    description:
+                      "Adobe Experience Manager was used to rollout the new brand for Crown Industries. Bootstrap was used to display numerous components in a responsive layout, along with Sass to manage the CSS, which was compiled as part of the build process using Grunt."
+                  }
+                ]
               }
             ],
-            showTask: true,
-            showDeliverable: false
+            path: "crown"
           }
         ]
       },
@@ -230,132 +149,49 @@ export default new Vuex.Store({
         projects: [
           {
             id: 0,
-            description:
-              "Brainstormed concepts with machine operators using Gamestorming techniques to generate new ideas.",
-            skills: [
+            name: "NextGen",
+            description: "The next generation of machine control.",
+            tasks: [
               {
-                label: "UX",
-                isActive: true
+                id: 0,
+                description:
+                  "Brainstormed concepts with machine operators using Gamestorming techniques to generate new ideas.",
+                skills: ["UX", "Ideation"]
               },
               {
-                label: "Ideation",
-                isActive: false
+                id: 1,
+                description:
+                  "Developed HTML/Bootstrap prototypes for field testing with machine operators.",
+                skills: ["UX", "UI", "Bootstrap", "Research", "Prototyping"]
+              },
+              {
+                id: 2,
+                description:
+                  "Conducted field research of the construction industry across the US and Canada, providing top level reports of my findings to primary stakeholders.",
+                skills: ["UX", "Research", "Analysis", "Reporting"]
+              },
+              {
+                id: 3,
+                description:
+                  "Modeled an excavator and work site using Trimble SketchUp.",
+                skills: ["UI", "3D Modeling", "SketchUp"]
+              },
+              {
+                id: 4,
+                description:
+                  "Provided design assets for Android/Vuforia prototypes, and for production within an Agile environment, which included style guides and custom icons for Android applications.",
+                skills: [
+                  "UI",
+                  "Android",
+                  "Vuforia",
+                  "Agile",
+                  "Style Guide",
+                  "Iconography",
+                  "Prototyping"
+                ]
               }
             ],
-            showTask: true,
-            showDeliverable: false
-          },
-          {
-            id: 1,
-            description:
-              "Developed HTML/Bootstrap prototypes for field testing with machine operators.",
-            skills: [
-              {
-                label: "UX",
-                isActive: true
-              },
-              {
-                label: "UI",
-                isActive: true
-              },
-              {
-                label: "Bootstrap",
-                isActive: false
-              },
-              {
-                label: "Research",
-                isActive: false
-              },
-              {
-                label: "Prototyping",
-                isActive: false
-              }
-            ],
-            showTask: true,
-            showDeliverable: false
-          },
-          {
-            id: 2,
-            description:
-              "Conducted field research of the construction industry across the US and Canada, providing top level reports of my findings to primary stakeholders.",
-            skills: [
-              {
-                label: "UX",
-                isActive: true
-              },
-              {
-                label: "Research",
-                isActive: false
-              },
-              {
-                label: "Analysis",
-                isActive: false
-              },
-              {
-                label: "Reporting",
-                isActive: false
-              }
-            ],
-            showTask: true,
-            showDeliverable: false
-          },
-          {
-            id: 3,
-            description:
-              "Modeled an excavator and work site using Trimble SketchUp.",
-            skills: [
-              {
-                label: "UI",
-                isActive: true
-              },
-              {
-                label: "3D Modeling",
-                isActive: false
-              },
-              {
-                label: "SketchUp",
-                isActive: false
-              }
-            ],
-            showTask: true,
-            showDeliverable: false
-          },
-          {
-            id: 4,
-            description:
-              "Provided design assets for Android/Vuforia prototypes, and for production within an Agile environment, which included style guides and custom icons for Android applications.",
-            skills: [
-              {
-                label: "UI",
-                isActive: true
-              },
-              {
-                label: "Android",
-                isActive: false
-              },
-              {
-                label: "Vuforia",
-                isActive: false
-              },
-              {
-                label: "Agile",
-                isActive: false
-              },
-              {
-                label: "Style Guide",
-                isActive: false
-              },
-              {
-                label: "Iconography",
-                isActive: false
-              },
-              {
-                label: "Prototyping",
-                isActive: false
-              }
-            ],
-            showTask: true,
-            showDeliverable: false
+            path: "nextgen"
           }
         ]
       },
@@ -369,122 +205,56 @@ export default new Vuex.Store({
         projects: [
           {
             id: 0,
-            description:
-              "Created annotated wireframes to support the development of Lexis Advance.",
-            skills: [
+            name: "Lexis Advance",
+            description: "The next generation of legal documentation",
+            tasks: [
               {
-                label: "UX",
-                isActive: true
+                id: 0,
+                description:
+                  "Created annotated wireframes to support the development of Lexis Advance.",
+                skills: ["UX"]
+              },
+              {
+                id: 1,
+                description:
+                  "Conducted concept testing and usability research with legal professionals, and delivered top level reports of my discussions to primary stakeholders. ",
+                skills: ["UX", "Testing", "Research", "Reporting"]
+              },
+              {
+                id: 2,
+                description:
+                  "Lead brainstorming workshops with legal professionals using Gamestorming techniques to generate new ideas.",
+                skills: ["UX", "Ideation"]
+              },
+              {
+                id: 3,
+                description:
+                  "Founding member of the Customer Discovery & Innovation team which designed, prototyped, and tested the most popular concepts from our innovation pipeline.",
+                skills: [
+                  "UX",
+                  "Research",
+                  "Analysis",
+                  "Reporting",
+                  "Prototyping"
+                ]
+              },
+              {
+                id: 4,
+                description:
+                  "Design Lead for several innovative products including Lexis Answers.",
+                skills: [
+                  "UX",
+                  "Research",
+                  "Analysis",
+                  "Ideation",
+                  "Reporting",
+                  "Prototyping"
+                ]
               }
-            ],
-            showTask: true,
-            showDeliverable: false
-          },
-          {
-            id: 1,
-            description:
-              "Conducted concept testing and usability research with legal professionals, and delivered top level reports of my discussions to primary stakeholders. ",
-            skills: [
-              {
-                label: "UX",
-                isActive: true
-              },
-              {
-                label: "Testing",
-                isActive: false
-              },
-              {
-                label: "Research",
-                isActive: false
-              },
-              {
-                label: "Reporting",
-                isActive: false
-              }
-            ],
-            showTask: true,
-            showDeliverable: false
-          },
-          {
-            id: 2,
-            description:
-              "Lead brainstorming workshops with legal professionals using Gamestorming techniques to generate new ideas.",
-            skills: [
-              {
-                label: "UX",
-                isActive: true
-              },
-              {
-                label: "Ideation",
-                isActive: false
-              }
-            ],
-            showTask: true,
-            showDeliverable: false
-          },
-          {
-            id: 3,
-            description:
-              "Founding member of the Customer Discovery & Innovation team which designed, prototyped, and tested the most popular concepts from our innovation pipeline.",
-            skills: [
-              {
-                label: "UX",
-                isActive: true
-              },
-              {
-                label: "Research",
-                isActive: false
-              },
-              {
-                label: "Analysis",
-                isActive: false
-              },
-              {
-                label: "Reporting",
-                isActive: false
-              },
-              {
-                label: "Prototyping",
-                isActive: false
-              }
-            ],
-            showTask: true,
-            showDeliverable: false
-          },
-          {
-            id: 4,
-            description:
-              "Design Lead for several innovative products including Lexis Answers.",
-            skills: [
-              {
-                label: "UX",
-                isActive: true
-              },
-              {
-                label: "Research",
-                isActive: false
-              },
-              {
-                label: "Analysis",
-                isActive: false
-              },
-              {
-                label: "Ideation",
-                isActive: false
-              },
-              {
-                label: "Reporting",
-                isActive: false
-              },
-              {
-                label: "Prototyping",
-                isActive: false
-              }
-            ],
-            showTask: true,
-            showDeliverable: false
+            ]
           }
-        ]
+        ],
+        path: "lexisadvance"
       },
       {
         id: 4,
@@ -496,112 +266,102 @@ export default new Vuex.Store({
         projects: [
           {
             id: 0,
-            description:
-              "Planned the digital experience of social, mobile, and web applications for corporate clients that included P&G, Pearle Vision, and Red Bull.",
-            skills: [
+            name: "Pearle Vision",
+            description: "Main website for Pearl Vision, inc.",
+            tasks: [
               {
-                label: "UX",
-                isActive: true
+                id: 0,
+                description:
+                  "Planned the digital experience of social, mobile, and web applications for corporate clients that included P&G, Pearle Vision, and Red Bull.",
+                skills: ["UX", "Social Media", "Mobile Design", "Web Design"]
               },
               {
-                label: "Social",
-                isActive: false
+                id: 1,
+                description:
+                  "Lead brainstorming sessions with creative, technical, and business leads to generate new ideas.",
+                skills: ["UX", "Ideation"]
               },
               {
-                label: "Mobile",
-                isActive: false
+                id: 2,
+                description:
+                  "Illustrated user flows, site maps, and wireframes to assist the design and development teams.",
+                skills: ["UX"]
               },
               {
-                label: "Web",
-                isActive: false
+                id: 3,
+                description:
+                  "Documented features and functionality for project management, and provided competitive analysis of similar products on the market.",
+                skills: ["UX"]
+              },
+              {
+                id: 4,
+                description:
+                  "Conducted usability testing with potential customers and reported insights back to the team.",
+                skills: ["UX", "Research", "Analysis", "Reporting"]
+              },
+              {
+                id: 5,
+                description:
+                  "Presented initial concepts, customer feedback, and other deliverables to the clients.",
+                skills: ["UX"]
               }
             ],
-            showTask: true,
-            showDeliverable: false
-          },
-          {
-            id: 1,
-            description:
-              "Lead brainstorming sessions with creative, technical, and business leads to generate new ideas.",
-            skills: [
-              {
-                label: "UX",
-                isActive: true
-              },
-              {
-                label: "Ideation",
-                isActive: false
-              }
-            ],
-            showTask: true,
-            showDeliverable: false
-          },
-          {
-            id: 2,
-            description:
-              "Illustrated user flows, site maps, and wireframes to assist the design and development teams.",
-            skills: [
-              {
-                label: "UX",
-                isActive: true
-              }
-            ],
-            showTask: true,
-            showDeliverable: false
-          },
-          {
-            id: 3,
-            description:
-              "Documented features and functionality for project management, and provided competitive analysis of similar products on the market.",
-            skills: [
-              {
-                label: "UX",
-                isActive: true
-              }
-            ],
-            showTask: true,
-            showDeliverable: false
-          },
-          {
-            id: 4,
-            description:
-              "Conducted usability testing with potential customers and reported insights back to the team.",
-            skills: [
-              {
-                label: "UX",
-                isActive: true
-              },
-              {
-                label: "Research",
-                isActive: false
-              },
-              {
-                label: "Analysis",
-                isActive: false
-              },
-              {
-                label: "Reporting",
-                isActive: false
-              }
-            ],
-            showTask: true,
-            showDeliverable: false
-          },
-          {
-            id: 5,
-            description:
-              "Presented initial concepts, customer feedback, and other deliverables to the clients.",
-            skills: [
-              {
-                label: "UX",
-                isActive: true
-              }
-            ],
-            showTask: true,
-            showDeliverable: false
+            path: "pearlevision"
           }
         ]
       }
     ]
+  },
+  getters: {
+    projects(state) {
+      let projects = [];
+
+      if (state.employers) {
+        for (let e = 0; e < state.employers.length; e++) {
+          if (state.employers[e].projects) {
+            for (let p = 0; p < state.employers[e].projects.length; p++) {
+              let project = {
+                id: p,
+                name: state.employers[e].projects[p].name
+              };
+
+              projects.push(project);
+            }
+          }
+        }
+      }
+
+      return projects;
+    },
+    tasks(state) {
+      let tasks = [];
+
+      if (state.employers) {
+        for (let e = 0; e < state.employers.length; e++) {
+          if (state.employers[e].projects) {
+            for (let p = 0; p < state.employers[e].projects.length; p++) {
+              if (state.employers[e].projects[p].tasks) {
+                for (
+                  let t = 0;
+                  t < state.employers[e].projects[p].tasks.length;
+                  t++
+                ) {
+                  let task = {
+                    id: t,
+                    name: state.employers[e].projects[p].tasks[t].description,
+                    project: state.employers[e].projects[p].name,
+                    employer: state.employers[e].name
+                  };
+
+                  tasks.push(task);
+                }
+              }
+            }
+          }
+        }
+      }
+
+      return tasks;
+    }
   }
 });
