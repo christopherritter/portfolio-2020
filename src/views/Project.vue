@@ -1,13 +1,20 @@
 <template>
   <b-container class="project">
+
     <h2 class="project-name">{{ project.name }}</h2>
     <p class="project-description">{{ project.description }}</p>
 
     <div class="project-image"></div>
 
     <b-row class="resume-abilities-header">
-      <b-col cols="6" class="bullet-header">My role</b-col>
-      <b-col cols="6" class="bullet-header">Client</b-col>
+      <b-col
+        cols="6"
+        class="bullet-header"
+      >My role</b-col>
+      <b-col
+        cols="6"
+        class="bullet-header"
+      >Client</b-col>
     </b-row>
 
     <b-row class="resume-abilities">
@@ -39,17 +46,23 @@
 
     <hr />
 
-    <div class="company-tasks" v-for="task in taskList" v-bind:key="task.id">
-        <b-row v-if="project.name == task.project" class="tasks">
-          <b-col>
-            <div class="bullet-item">
-              <div class="bullet"></div>
-              <div class="bullet-text">{{ task.description }}</div>
-            </div>
-          </b-col>
-        </b-row>
-      </div>
-
+    <div
+      class="company-tasks"
+      v-for="task in taskList"
+      v-bind:key="task.id"
+    >
+      <b-row
+        v-if="project.name == task.project"
+        class="tasks"
+      >
+        <b-col>
+          <div class="bullet-item">
+            <div class="bullet"></div>
+            <div class="bullet-text">{{ task.description }}</div>
+          </div>
+        </b-col>
+      </b-row>
+    </div>
   </b-container>
 </template>
 
@@ -59,21 +72,37 @@ import store from "@/store";
 export default {
   name: "project",
   store,
-  computed: {
-    project() {
+  data() {
+    return {
+      loading: false,
+      project: null,
+      error: null
+    };
+  },
+  created() {
+    // fetch the data when the view is created and the data is
+    // already being observed
+    this.fetchData();
+  },
+  watch: {
+    // call again the method if the route changes
+    $route: "fetchData"
+  },
+  methods: {
+    fetchData() {
       let project_slug = this.$route.params.project_slug;
       let projects = this.$store.getters.projects;
-      let project = {};
 
       for (let p = 0; p < projects.length; p++) {
         if (projects[p].path == project_slug.toLowerCase()) {
-          project = projects[p];
+          this.project = projects[p];
         }
       }
 
-      return project;
-      // return projects;
-    },
+      window.scrollTo(0,0);
+    }
+  },
+  computed: {
     taskList() {
       return this.$store.getters.tasks;
     }

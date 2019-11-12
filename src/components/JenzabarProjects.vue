@@ -13,9 +13,10 @@
           </b-col>
           <b-col cols="8">
             <p class="project-description">{{ project.description }}</p>
-            <a :href="'projects/' + project.path" class="project-path"
-              >More info</a
-            >
+            <b-link
+              :to="'projects/' + project.path"
+              class="project-path"
+            >More info</b-link>
           </b-col>
         </b-row>
       </b-col>
@@ -62,5 +63,12 @@ a {
 .project-description {
   margin: 12px;
   line-height: 1.65;
+}
+.project-path {
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  margin-left: 10px;
+}
+.project-path:after {
+  content: " →";
 }
 </style>

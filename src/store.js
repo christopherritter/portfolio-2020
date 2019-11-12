@@ -365,6 +365,9 @@ export default new Vuex.Store({
                     id: t,
                     description:
                       state.employers[e].projects[p].tasks[t].description,
+                    deliverables:
+                      state.employers[e].projects[p].tasks[t].deliverables ||
+                      [],
                     project: state.employers[e].projects[p].name,
                     employer: state.employers[e].name
                   };
