@@ -35,14 +35,9 @@ export default new Vuex.Store({
               {
                 description:
                   "Refactored ASP.Net ASCX templates for the online portal to utilize Bootstrap/Sass for responsive layouts.",
-                skills: [
-                  "UI",
-                  "Bootstrap",
-                  "Sass",
-                  "ASCX",
-                  "Prototyping",
-                  "XD"
-                ],
+                skills: ["UX", "UI", "Prototyping"],
+                tools: ["XD", "VS Code"],
+                tech: ["ASCX", "Bootstrap", "Sass"],
                 deliverables: [
                   {
                     id: 0,
@@ -337,8 +332,37 @@ export default new Vuex.Store({
                 id: p,
                 description: state.employers[e].projects[p].description,
                 name: state.employers[e].projects[p].name,
+                skills: [],
+                tools: [],
+                tech: [],
                 path: state.employers[e].projects[p].path
               };
+
+              if (state.employers[e].projects[p].tasks) {
+                project.tasks = state.employers[e].projects[p].tasks;
+
+                for (
+                  let t = 0;
+                  t < state.employers[e].projects[p].tasks.length;
+                  t++
+                ) {
+                  if (state.employers[e].projects[p].tasks[t].skills) {
+                    project.skills.push(
+                      state.employers[e].projects[p].tasks[t].skills
+                    );
+                  }
+                  if (state.employers[e].projects[p].tasks[t].tools) {
+                    project.tools.push(
+                      state.employers[e].projects[p].tasks[t].tools
+                    );
+                  }
+                  if (state.employers[e].projects[p].tasks[t].tech) {
+                    project.tech.push(
+                      state.employers[e].projects[p].tasks[t].tech
+                    );
+                  }
+                }
+              }
 
               projects.push(project);
             }
