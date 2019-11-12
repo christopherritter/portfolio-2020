@@ -42,14 +42,14 @@ export default new Vuex.Store({
                   {
                     id: 0,
                     title: "Jenzabar ICS Design System",
-                    img: "img/JICS-Design-System_Home.png",
+                    img: "/img/JICS-Design-System_Home.png",
                     description:
                       "A new design system was created for Jenzabar ICS portlets completely from scratch using the application to display ASP.Net content."
                   },
                   {
                     id: 1,
                     title: "Design System Components",
-                    img: "img/JICS-Design-System_Tables.png",
+                    img: "/img/JICS-Design-System_Tables.png",
                     description:
                       "Code samples were provided alongside functional examples of the Components which are constructed from ASP.Net Web Controls, and include the necessary Bootstrap to assist the developers."
                   }
@@ -71,18 +71,17 @@ export default new Vuex.Store({
                   "UX",
                   "UI",
                   "Prototyping",
-                  "XD",
                   "Research",
                   "Analysis",
-                  "Reporting",
-                  "QT",
-                  "QSS"
+                  "Reporting"
                 ],
+                tools: ["XD", "VS Code", "QT Creator"],
+                tech: ["QT", "QSS"],
                 deliverables: [
                   {
                     id: 0,
                     title: "CX 10 Home Screen",
-                    img: "img/CX10-Home.png",
+                    img: "/img/CX10-Home.png",
                     description:
                       "The home screen for CX 10 provides users with a searchable directory of their available applications. When the user launches an application it appears on a recently viewed list next to the directory."
                   }
@@ -108,7 +107,9 @@ export default new Vuex.Store({
               {
                 description:
                   "Developed Java prototypes using SmartGWT to demonstrate interactions and responsive layouts.",
-                skills: ["UX", "UI", "SmartGWT", "Prototyping"]
+                skills: ["UI", "Prototyping"],
+                tools: ["Visual Studio"],
+                tech: ["SmartGWT"]
               }
             ],
             path: "jx"
@@ -131,12 +132,14 @@ export default new Vuex.Store({
               {
                 description:
                   "Contracted to provide front-end assistance for Crown Equipment to implement a responsive design for their corporate site managed by Adobe Experience Manager.",
-                skills: ["UX", "UI", "AEM", "Bootstrap", "Sass", "Grunt"],
+                skills: ["UX", "UI"],
+                tools: ["Adobe Experience Manager"],
+                tech: ["Bootstrap", "Sass", "Grunt"],
                 deliverables: [
                   {
                     id: 0,
                     title: "Crown Industries Rebranding",
-                    img: "img/Crown-Website.png",
+                    img: "/img/Crown-Website.png",
                     description:
                       "Adobe Experience Manager was used to rollout the new brand for Crown Industries. Bootstrap was used to display numerous components in a responsive layout, along with Sass to manage the CSS, which was compiled as part of the build process using Grunt."
                   }
@@ -170,7 +173,8 @@ export default new Vuex.Store({
                 id: 1,
                 description:
                   "Developed HTML/Bootstrap prototypes for field testing with machine operators.",
-                skills: ["UX", "UI", "Bootstrap", "Research", "Prototyping"]
+                skills: ["UX", "UI", "Research", "Prototyping"],
+                tech: ["Bootstrap"]
               },
               {
                 id: 2,
@@ -182,7 +186,8 @@ export default new Vuex.Store({
                 id: 3,
                 description:
                   "Modeled an excavator and work site using Trimble SketchUp.",
-                skills: ["UI", "3D Modeling", "SketchUp"]
+                skills: ["UI", "3D Modeling"],
+                tools: ["SketchUp"]
               },
               {
                 id: 4,
@@ -191,12 +196,11 @@ export default new Vuex.Store({
                 skills: [
                   "UI",
                   "Android",
-                  "Vuforia",
-                  "Agile",
                   "Style Guide",
                   "Iconography",
                   "Prototyping"
-                ]
+                ],
+                tech: ["Vuforia"]
               }
             ],
             path: "nextgen"
@@ -335,6 +339,7 @@ export default new Vuex.Store({
                 skills: [],
                 tools: [],
                 tech: [],
+                deliverables: [],
                 path: state.employers[e].projects[p].path
               };
 
@@ -347,20 +352,53 @@ export default new Vuex.Store({
                   t++
                 ) {
                   if (state.employers[e].projects[p].tasks[t].skills) {
-                    project.skills.push(
-                      state.employers[e].projects[p].tasks[t].skills
-                    );
+                    for (
+                      let s = 0;
+                      s < state.employers[e].projects[p].tasks[t].skills.length;
+                      s++
+                    ) {
+                      project.skills.push(
+                        state.employers[e].projects[p].tasks[t].skills[s]
+                      );
+                    }
                   }
+
                   if (state.employers[e].projects[p].tasks[t].tools) {
-                    project.tools.push(
-                      state.employers[e].projects[p].tasks[t].tools
-                    );
+                    for (
+                      let o = 0;
+                      o < state.employers[e].projects[p].tasks[t].tools.length;
+                      o++
+                    ) {
+                      project.tools.push(
+                        state.employers[e].projects[p].tasks[t].tools[o]
+                      );
+                    }
                   }
+
                   if (state.employers[e].projects[p].tasks[t].tech) {
-                    project.tech.push(
-                      state.employers[e].projects[p].tasks[t].tech
-                    );
+                    for (
+                      let c = 0;
+                      c < state.employers[e].projects[p].tasks[t].tech.length;
+                      c++
+                    ) {
+                      project.tech.push(
+                        state.employers[e].projects[p].tasks[t].tech[c]
+                      );
+                    }
                   }
+
+                  if (state.employers[e].projects[p].tasks[t].deliverables) {
+                    for (
+                      let d = 0;
+                      d < state.employers[e].projects[p].tasks[t].deliverables.length;
+                      d++
+                    ) {
+                      project.deliverables.push(
+                        state.employers[e].projects[p].tasks[t].deliverables[d]
+                      );
+                    }
+                  }
+
                 }
               }
 

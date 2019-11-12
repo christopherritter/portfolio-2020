@@ -1,60 +1,73 @@
 <template>
   <b-container class="project">
-
     <h2 class="project-name">{{ project.name }}</h2>
     <p class="project-description">{{ project.description }}</p>
 
     <div class="project-image"></div>
 
     <b-row class="resume-abilities-header">
-      <b-col
-        cols="6"
-        class="bullet-header"
-      >My role</b-col>
-      <b-col
-        cols="6"
-        class="bullet-header"
-      >Client</b-col>
-    </b-row>
-
-    <b-row class="resume-abilities">
-      <b-col>
-        <div class="bullet-item">
-          <div class="bullet"></div>
-          <div class="bullet-text">Brainstorming</div>
-        </div>
+      <b-col md="6" v-if="project.skills.length > 0">
+        <b-row>
+          <b-col>
+            <h6 class="bullet-header">Skills</h6>
+          </b-col>
+        </b-row>
+        <b-row>
+          <b-col
+            cols="6"
+            class="bullet-item"
+            v-for="skill in project.skills"
+            v-bind:key="skill.id"
+          >
+            <div class="bullet"></div>
+            <div class="bullet-text">{{ skill }}</div>
+          </b-col>
+        </b-row>
       </b-col>
-      <b-col>
-        <div class="bullet-item">
-          <div class="bullet"></div>
-          <div class="bullet-text">Prototyping</div>
-        </div>
+      <b-col cols="3" v-if="project.tools.length > 0">
+        <b-row>
+          <b-col>
+            <h6 class="bullet-header">Tools</h6>
+          </b-col>
+        </b-row>
+        <b-row>
+          <b-col>
+            <div
+              class="bullet-item"
+              v-for="tool in project.tools"
+              v-bind:key="tool.id"
+            >
+              <div class="bullet"></div>
+              <div class="bullet-text">{{ tool }}</div>
+            </div>
+          </b-col>
+        </b-row>
       </b-col>
-      <b-col>
-        <div class="bullet-item">
-          <div class="bullet"></div>
-          <div class="bullet-text">Adobe XD</div>
-        </div>
-      </b-col>
-      <b-col>
-        <div class="bullet-item">
-          <div class="bullet"></div>
-          <div class="bullet-text">HTML</div>
-        </div>
+      <b-col cols="3" v-if="project.tech.length > 0">
+        <b-row>
+          <b-col>
+            <h6 class="bullet-header">Tech</h6>
+          </b-col>
+        </b-row>
+        <b-row>
+          <b-col>
+            <div
+              class="bullet-item"
+              v-for="technology in project.tech"
+              v-bind:key="technology.id"
+            >
+              <div class="bullet"></div>
+              <div class="bullet-text">{{ technology }}</div>
+            </div>
+          </b-col>
+        </b-row>
       </b-col>
     </b-row>
 
     <hr />
 
-    <div
-      class="company-tasks"
-      v-for="task in taskList"
-      v-bind:key="task.id"
-    >
-      <b-row
-        v-if="project.name == task.project"
-        class="tasks"
-      >
+    <div class="project-tasks" v-for="task in taskList" v-bind:key="task.id">
+      <b-row v-if="project.name == task.project" class="tasks">
         <b-col>
           <div class="bullet-item">
             <div class="bullet"></div>
@@ -63,6 +76,20 @@
         </b-col>
       </b-row>
     </div>
+
+    <div class="project-deliverables" v-if="project.deliverables.length > 0">
+      <b-row class="deliverable" v-for="deliverable in project.deliverables" v-bind:key="deliverable.id">
+        <b-col>
+          <hr />
+          <h4>{{ deliverable.title }}</h4>
+          <div class="deliverable-image">
+            <b-img :src="deliverable.img" fluid alt="Responsive image"></b-img>
+          </div>
+          <p>{{ deliverable.description }}</p>
+        </b-col>
+      </b-row>
+    </div>
+
   </b-container>
 </template>
 
@@ -99,7 +126,7 @@ export default {
         }
       }
 
-      window.scrollTo(0,0);
+      window.scrollTo(0, 0);
     }
   },
   computed: {
@@ -117,11 +144,23 @@ hr {
 .project-name {
   margin: 4em 0 0.5em 0;
 }
-.project-image {
+.project-image,
+.deliverable-image {
   width: 100%;
-  height: 540px;
   background-color: #edf1f4;
+}
+.project-image {
+  height: 540px;
   margin: 6em 0 3em 0;
+}
+.deliverable-image {
+  margin: 3em 0;
+  padding: 2em;
+}
+.deliverable-image img {
+  -webkit-box-shadow: 0 20px 16px -16px rgba(0,0,0,0.15);
+  -moz-box-shadow: 0 20px 16px -16px rgba(0,0,0,0.15);
+  box-shadow: 0 20px 16px -16px rgba(0,0,0,0.15);
 }
 .bullet-header {
   font-family: "Montserrat SemiBold", Helvetica, Arial, sans-serif;

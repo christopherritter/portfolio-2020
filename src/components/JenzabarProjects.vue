@@ -13,10 +13,9 @@
           </b-col>
           <b-col cols="8">
             <p class="project-description">{{ project.description }}</p>
-            <b-link
-              :to="'projects/' + project.path"
-              class="project-path"
-            >More info</b-link>
+            <b-link :to="'projects/' + project.path" class="project-path"
+              >More info</b-link
+            >
           </b-col>
         </b-row>
       </b-col>

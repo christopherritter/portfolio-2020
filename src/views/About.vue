@@ -1,6 +1,6 @@
 <template>
   <b-container class="about">
-    <div class="my-image"></div>
+    <div class="about-image"></div>
     <h2 class="about-me">About me</h2>
     <p class="lead">
       Hello! I’m Aleksi Tappura, a freelance designer focused on digital product
@@ -26,11 +26,15 @@
 </template>
 
 <style scoped>
-.my-image {
+.about-image {
   width: 100%;
-  height: 540px;
+  height: 22em;
   background-color: #edf1f4;
   margin-bottom: 60px;
+  background-image: url("/img/website-thumbnail.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 .about-me {
   margin-bottom: 1.5rem;

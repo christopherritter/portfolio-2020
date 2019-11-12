@@ -85,7 +85,9 @@ export default {
   store,
   data() {
     return {
-      store
+      loading: false,
+      project: null,
+      error: null
     };
   },
   computed: {
