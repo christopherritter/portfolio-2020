@@ -9,36 +9,62 @@
       </b-col>
     </b-row>
 
-    <b-row class="resume-abilities-header">
-      <b-col cols="6" class="bullet-header">Skills</b-col>
-      <b-col class="bullet-header">Tools</b-col>
-      <b-col class="bullet-header">Tech</b-col>
-    </b-row>
-
     <b-row class="resume-abilities">
-      <b-col>
-        <div class="bullet-item">
-          <div class="bullet"></div>
-          <div class="bullet-text">Brainstorming</div>
-        </div>
+      <b-col md="6">
+        <b-row>
+          <b-col>
+            <h6 class="bullet-header">Skills</h6>
+          </b-col>
+        </b-row>
+        <b-row>
+          <b-col
+            cols="6"
+            class="bullet-item"
+            v-for="skill in skillList.slice(0, 10)"
+            v-bind:key="skill.id"
+          >
+            <div class="bullet"></div>
+            <div class="bullet-text">{{ skill.label }}</div>
+          </b-col>
+        </b-row>
       </b-col>
-      <b-col>
-        <div class="bullet-item">
-          <div class="bullet"></div>
-          <div class="bullet-text">Prototyping</div>
-        </div>
+      <b-col cols="3">
+        <b-row>
+          <b-col>
+            <h6 class="bullet-header">Tools</h6>
+          </b-col>
+        </b-row>
+        <b-row>
+          <b-col>
+            <div
+              class="bullet-item"
+              v-for="tool in toolList.slice(0, 5)"
+              v-bind:key="tool.id"
+            >
+              <div class="bullet"></div>
+              <div class="bullet-text">{{ tool.label }}</div>
+            </div>
+          </b-col>
+        </b-row>
       </b-col>
-      <b-col>
-        <div class="bullet-item">
-          <div class="bullet"></div>
-          <div class="bullet-text">Adobe XD</div>
-        </div>
-      </b-col>
-      <b-col>
-        <div class="bullet-item">
-          <div class="bullet"></div>
-          <div class="bullet-text">HTML</div>
-        </div>
+      <b-col cols="3">
+        <b-row>
+          <b-col>
+            <h6 class="bullet-header">Tech</h6>
+          </b-col>
+        </b-row>
+        <b-row>
+          <b-col>
+            <div
+              class="bullet-item"
+              v-for="technology in techList.slice(0, 5)"
+              v-bind:key="technology.id"
+            >
+              <div class="bullet"></div>
+              <div class="bullet-text">{{ technology.label }}</div>
+            </div>
+          </b-col>
+        </b-row>
       </b-col>
     </b-row>
 
@@ -98,6 +124,15 @@ export default {
   computed: {
     taskList() {
       return this.$store.getters.tasks;
+    },
+    skillList() {
+      return this.$store.getters.skills;
+    },
+    toolList() {
+      return this.$store.getters.tools;
+    },
+    techList() {
+      return this.$store.getters.tech;
     }
   },
   methods: {

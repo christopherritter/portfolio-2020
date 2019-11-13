@@ -1,12 +1,8 @@
 <template>
   <div class="jenzabar-projects">
-    <b-row
-      class="project"
-      v-for="project in projects"
-      v-bind:key="project.id"
-    >
+    <b-row class="project" v-for="project in projects" v-bind:key="project.id">
       <b-col>
-        <div class="project-image bg-light">
+        <div class="project-image bg-light" v-if="project.img">
           <b-img :src="project.img" fluid :alt="project.name"></b-img>
         </div>
         <b-row>
@@ -77,6 +73,7 @@ a {
   width: 100%;
   height: 540px;
   /* background-color: #edf1f4; */
+  margin-bottom: 0.675em;
 }
 .project-name,
 .project-description {

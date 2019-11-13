@@ -18,11 +18,41 @@
     <router-view />
     <b-container id="footer" class="text-light bg-dark" fluid>
       <b-container class="download-resume">
-        <h3>Download a copy of my resume</h3>
-        <p>
-          Download an updated copy of my resume in Adobe PDF or Microsoft Word
-          format.
-        </p>
+        <b-row>
+          <b-col class="download-resume-header">
+            <h3>Download a copy of my resume</h3>
+          </b-col>
+        </b-row>
+        <b-row>
+          <b-col class="download-resume-text">
+            Download an updated copy of my resume in Adobe PDF or Microsoft Word
+            format.
+          </b-col>
+        </b-row>
+        <b-row>
+          <b-col class="download-resume-buttons">
+            <b-button
+              size="lg"
+              variant="primary"
+              :href="
+                `${publicPath}files/Christopher-Ritter_Resume-06-04-2019.pdf`
+              "
+              download
+              target="_blank"
+              >Adobe PDF</b-button
+            >
+            <b-button
+              size="lg"
+              variant="outline-light"
+              :href="
+                `${publicPath}files/Christopher-Ritter_Resume-06-04-2019.docx`
+              "
+              download
+              target="_blank"
+              >Microsoft Word</b-button
+            >
+          </b-col>
+        </b-row>
       </b-container>
       <hr />
       <b-container class="copyright-info">
@@ -31,6 +61,17 @@
     </b-container>
   </div>
 </template>
+
+<script>
+export default {
+  name: "app",
+  data() {
+    return {
+      publicPath: process.env.BASE_URL
+    };
+  }
+};
+</script>
 
 <style>
 #app {
@@ -112,5 +153,23 @@ p {
 
 .lead {
   line-height: 2.5rem;
+}
+
+.download-resume {
+  text-align: center;
+}
+
+.download-resume-header {
+  padding-bottom: 0.25em;
+}
+
+.download-resume-text {
+  font-size: 1.05rem;
+  padding-bottom: 2em;
+}
+
+.download-resume-buttons .btn {
+  font-size: 1.05rem;
+  margin-right: 1em;
 }
 </style>

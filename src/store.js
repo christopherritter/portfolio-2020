@@ -38,7 +38,7 @@ export default new Vuex.Store({
                 description:
                   "Refactored ASP.Net ASCX templates for the online portal to utilize Bootstrap/Sass for responsive layouts.",
                 skills: ["UX", "UI", "Prototyping"],
-                tools: ["XD", "VS Code"],
+                tools: ["Adobe XD", "VS Code"],
                 tech: ["ASCX", "Bootstrap", "Sass"],
                 deliverables: [
                   {
@@ -78,7 +78,7 @@ export default new Vuex.Store({
                   "Analysis",
                   "Reporting"
                 ],
-                tools: ["XD", "VS Code", "QT Creator"],
+                tools: ["Adobe XD", "VS Code", "QT Creator"],
                 tech: ["QT", "QSS"],
                 deliverables: [
                   {
@@ -332,87 +332,85 @@ export default new Vuex.Store({
     projects(state) {
       let projects = [];
 
-      if (state.employers) {
-        for (let e = 0; e < state.employers.length; e++) {
-          if (state.employers[e].projects) {
-            for (let p = 0; p < state.employers[e].projects.length; p++) {
-              let project = {
-                id: p,
-                description: state.employers[e].projects[p].description,
-                name: state.employers[e].projects[p].name,
-                employer: state.employers[e].name,
-                skills: [],
-                tools: [],
-                tech: [],
-                deliverables: [],
-                path: state.employers[e].projects[p].path
-              };
+      for (let e = 0; e < state.employers.length; e++) {
+        if (state.employers[e].projects) {
+          for (let p = 0; p < state.employers[e].projects.length; p++) {
+            let project = {
+              id: p,
+              description: state.employers[e].projects[p].description,
+              name: state.employers[e].projects[p].name,
+              employer: state.employers[e].name,
+              skills: [],
+              tools: [],
+              tech: [],
+              deliverables: [],
+              path: state.employers[e].projects[p].path
+            };
 
-              if (state.employers[e].projects[p].img) {
-                project.img = state.employers[e].projects[p].img;
-              }
+            if (state.employers[e].projects[p].img) {
+              project.img = state.employers[e].projects[p].img;
+            }
 
-              if (state.employers[e].projects[p].tasks) {
-                project.tasks = state.employers[e].projects[p].tasks;
+            if (state.employers[e].projects[p].tasks) {
+              project.tasks = state.employers[e].projects[p].tasks;
 
-                for (
-                  let t = 0;
-                  t < state.employers[e].projects[p].tasks.length;
-                  t++
-                ) {
-                  if (state.employers[e].projects[p].tasks[t].skills) {
-                    for (
-                      let s = 0;
-                      s < state.employers[e].projects[p].tasks[t].skills.length;
-                      s++
-                    ) {
-                      project.skills.push(
-                        state.employers[e].projects[p].tasks[t].skills[s]
-                      );
-                    }
+              for (
+                let t = 0;
+                t < state.employers[e].projects[p].tasks.length;
+                t++
+              ) {
+                if (state.employers[e].projects[p].tasks[t].skills) {
+                  for (
+                    let s = 0;
+                    s < state.employers[e].projects[p].tasks[t].skills.length;
+                    s++
+                  ) {
+                    project.skills.push(
+                      state.employers[e].projects[p].tasks[t].skills[s]
+                    );
                   }
+                }
 
-                  if (state.employers[e].projects[p].tasks[t].tools) {
-                    for (
-                      let o = 0;
-                      o < state.employers[e].projects[p].tasks[t].tools.length;
-                      o++
-                    ) {
-                      project.tools.push(
-                        state.employers[e].projects[p].tasks[t].tools[o]
-                      );
-                    }
+                if (state.employers[e].projects[p].tasks[t].tools) {
+                  for (
+                    let o = 0;
+                    o < state.employers[e].projects[p].tasks[t].tools.length;
+                    o++
+                  ) {
+                    project.tools.push(
+                      state.employers[e].projects[p].tasks[t].tools[o]
+                    );
                   }
+                }
 
-                  if (state.employers[e].projects[p].tasks[t].tech) {
-                    for (
-                      let c = 0;
-                      c < state.employers[e].projects[p].tasks[t].tech.length;
-                      c++
-                    ) {
-                      project.tech.push(
-                        state.employers[e].projects[p].tasks[t].tech[c]
-                      );
-                    }
+                if (state.employers[e].projects[p].tasks[t].tech) {
+                  for (
+                    let c = 0;
+                    c < state.employers[e].projects[p].tasks[t].tech.length;
+                    c++
+                  ) {
+                    project.tech.push(
+                      state.employers[e].projects[p].tasks[t].tech[c]
+                    );
                   }
+                }
 
-                  if (state.employers[e].projects[p].tasks[t].deliverables) {
-                    for (
-                      let d = 0;
-                      d < state.employers[e].projects[p].tasks[t].deliverables.length;
-                      d++
-                    ) {
-                      project.deliverables.push(
-                        state.employers[e].projects[p].tasks[t].deliverables[d]
-                      );
-                    }
+                if (state.employers[e].projects[p].tasks[t].deliverables) {
+                  for (
+                    let d = 0;
+                    d <
+                    state.employers[e].projects[p].tasks[t].deliverables.length;
+                    d++
+                  ) {
+                    project.deliverables.push(
+                      state.employers[e].projects[p].tasks[t].deliverables[d]
+                    );
                   }
-
                 }
               }
-
-              projects.push(project);
             }
+
+            projects.push(project);
           }
         }
       }
@@ -422,29 +420,26 @@ export default new Vuex.Store({
     tasks(state) {
       let tasks = [];
 
-      if (state.employers) {
-        for (let e = 0; e < state.employers.length; e++) {
-          if (state.employers[e].projects) {
-            for (let p = 0; p < state.employers[e].projects.length; p++) {
-              if (state.employers[e].projects[p].tasks) {
-                for (
-                  let t = 0;
-                  t < state.employers[e].projects[p].tasks.length;
-                  t++
-                ) {
-                  let task = {
-                    id: t,
-                    description:
-                      state.employers[e].projects[p].tasks[t].description,
-                    deliverables:
-                      state.employers[e].projects[p].tasks[t].deliverables ||
-                      [],
-                    project: state.employers[e].projects[p].name,
-                    employer: state.employers[e].name
-                  };
+      for (let e = 0; e < state.employers.length; e++) {
+        if (state.employers[e].projects) {
+          for (let p = 0; p < state.employers[e].projects.length; p++) {
+            if (state.employers[e].projects[p].tasks) {
+              for (
+                let t = 0;
+                t < state.employers[e].projects[p].tasks.length;
+                t++
+              ) {
+                let task = {
+                  id: t,
+                  description:
+                    state.employers[e].projects[p].tasks[t].description,
+                  deliverables:
+                    state.employers[e].projects[p].tasks[t].deliverables || [],
+                  project: state.employers[e].projects[p].name,
+                  employer: state.employers[e].name
+                };
 
-                  tasks.push(task);
-                }
+                tasks.push(task);
               }
             }
           }
@@ -452,6 +447,157 @@ export default new Vuex.Store({
       }
 
       return tasks;
+    },
+    skills(state) {
+      let skills = [];
+
+      for (let e = 0; e < state.employers.length; e++) {
+        if (state.employers[e].projects) {
+          for (let p = 0; p < state.employers[e].projects.length; p++) {
+            if (state.employers[e].projects[p].tasks) {
+              for (
+                let t = 0;
+                t < state.employers[e].projects[p].tasks.length;
+                t++
+              ) {
+                if (state.employers[e].projects[p].tasks[t].skills) {
+                  for (
+                    let s = 0;
+                    s < state.employers[e].projects[p].tasks[t].skills.length;
+                    s++
+                  ) {
+                    let skill = {
+                      label: state.employers[e].projects[p].tasks[t].skills[s]
+                    };
+                    let pos = skills.findIndex(
+                      i =>
+                        i.label ===
+                        state.employers[e].projects[p].tasks[t].skills[s]
+                    );
+                    if (pos >= 0) {
+                      skills[pos].count++;
+                    } else {
+                      skill.count = 1;
+                      skills.push(skill);
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      return skills;
+    },
+    tools(state) {
+      let tools = [];
+
+      for (let e = 0; e < state.employers.length; e++) {
+        if (state.employers[e].projects) {
+          for (let p = 0; p < state.employers[e].projects.length; p++) {
+            if (state.employers[e].projects[p].tasks) {
+              for (
+                let t = 0;
+                t < state.employers[e].projects[p].tasks.length;
+                t++
+              ) {
+                if (state.employers[e].projects[p].tasks[t].tools) {
+                  for (
+                    let s = 0;
+                    s < state.employers[e].projects[p].tasks[t].tools.length;
+                    s++
+                  ) {
+                    let tool = {
+                      label: state.employers[e].projects[p].tasks[t].tools[s]
+                    };
+                    let pos = tools.findIndex(
+                      i =>
+                        i.label ===
+                        state.employers[e].projects[p].tasks[t].tools[s]
+                    );
+                    if (pos >= 0) {
+                      tools[pos].count++;
+                    } else {
+                      tool.count = 1;
+                      tools.push(tool);
+                    }
+                  }
+                }
+
+                // if (state.employers[e].projects[p].tasks[t].tech) {
+                //   for (
+                //     let c = 0;
+                //     c < state.employers[e].projects[p].tasks[t].tech.length;
+                //     c++
+                //   ) {
+                //     project.tech.push(
+                //       state.employers[e].projects[p].tasks[t].tech[c]
+                //     );
+                //   }
+                // }
+
+                // if (state.employers[e].projects[p].tasks[t].deliverables) {
+                //   for (
+                //     let d = 0;
+                //     d <
+                //     state.employers[e].projects[p].tasks[t].deliverables.length;
+                //     d++
+                //   ) {
+                //     project.deliverables.push(
+                //       state.employers[e].projects[p].tasks[t].deliverables[d]
+                //     );
+                //   }
+                // }
+              }
+            }
+          }
+        }
+      }
+
+      return tools;
+    },
+    tech(state) {
+      let technology = [];
+
+      for (let e = 0; e < state.employers.length; e++) {
+        if (state.employers[e].projects) {
+          for (let p = 0; p < state.employers[e].projects.length; p++) {
+            if (state.employers[e].projects[p].tasks) {
+              for (
+                let t = 0;
+                t < state.employers[e].projects[p].tasks.length;
+                t++
+              ) {
+                if (state.employers[e].projects[p].tasks[t].tech) {
+                  for (
+                    let s = 0;
+                    s < state.employers[e].projects[p].tasks[t].tech.length;
+                    s++
+                  ) {
+                    let tech = {
+                      label: state.employers[e].projects[p].tasks[t].tech[s]
+                    };
+                    let pos = technology.findIndex(
+                      i =>
+                        i.label ===
+                        state.employers[e].projects[p].tasks[t].tech[s]
+                    );
+                    if (pos >= 0) {
+                      technology[pos].count++;
+                    } else {
+                      tech.count = 1;
+                      technology.push(tech);
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      return technology;
     }
   }
 });

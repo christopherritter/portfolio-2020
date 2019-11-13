@@ -4,7 +4,7 @@
     <p class="project-description">{{ project.description }}</p>
 
     <div class="project-image bg-light" v-if="project.img">
-      <b-img :src="project.img" fluid alt="Responsive image"></b-img>
+      <b-img :src="project.img" fluid :alt="project.name"></b-img>
     </div>
 
     <b-row class="resume-abilities-header">
@@ -80,18 +80,25 @@
     </div>
 
     <div class="project-deliverables" v-if="project.deliverables.length > 0">
-      <b-row class="deliverable" v-for="deliverable in project.deliverables" v-bind:key="deliverable.id">
+      <b-row
+        class="deliverable"
+        v-for="deliverable in project.deliverables"
+        v-bind:key="deliverable.id"
+      >
         <b-col>
           <hr />
           <h4>{{ deliverable.title }}</h4>
-          <div class="deliverable-image bg-light">
-            <b-img :src="deliverable.img" fluid :alt="deliverable.title"></b-img>
+          <div class="deliverable-image bg-light" v-if="deliverable.img">
+            <b-img
+              :src="deliverable.img"
+              fluid
+              :alt="deliverable.title"
+            ></b-img>
           </div>
           <p>{{ deliverable.description }}</p>
         </b-col>
       </b-row>
     </div>
-
   </b-container>
 </template>
 
@@ -160,9 +167,9 @@ hr {
   padding: 2em;
 }
 .deliverable-image img {
-  -webkit-box-shadow: 0 20px 16px -16px rgba(0,0,0,0.15);
-  -moz-box-shadow: 0 20px 16px -16px rgba(0,0,0,0.15);
-  box-shadow: 0 20px 16px -16px rgba(0,0,0,0.15);
+  -webkit-box-shadow: 0 20px 16px -16px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0 20px 16px -16px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 20px 16px -16px rgba(0, 0, 0, 0.15);
 }
 .bullet-header {
   font-family: "Montserrat SemiBold", Helvetica, Arial, sans-serif;
