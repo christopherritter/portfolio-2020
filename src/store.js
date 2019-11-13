@@ -16,6 +16,7 @@ export default new Vuex.Store({
           {
             id: 0,
             name: "Find Your Calling",
+            img: "/img/FYC.png",
             description:
               "Online quiz which identifies the users career paths and connects them with relevant educational instutions.",
             tasks: [
@@ -29,6 +30,7 @@ export default new Vuex.Store({
           {
             id: 1,
             name: "Jenzabar ICS 9",
+            img: "/img/JICS9.png",
             description:
               "Online web portal which provides access to CX customer data through the Internet.",
             tasks: [
@@ -61,6 +63,7 @@ export default new Vuex.Store({
           {
             id: 2,
             name: "Jenzabar CX 10",
+            img: "/img/CX10.png",
             description:
               "Jenzabar JX is a desktop version of CX that completely transforms the user experience.",
             tasks: [
@@ -93,6 +96,7 @@ export default new Vuex.Store({
           {
             id: 3,
             name: "Jenzabar JX",
+            img: "/img/JX.png",
             description:
               "Jenzabar JX offers a suite of tools for colleges and universities built in Java and Smart GWT.",
             tasks: [
@@ -336,12 +340,17 @@ export default new Vuex.Store({
                 id: p,
                 description: state.employers[e].projects[p].description,
                 name: state.employers[e].projects[p].name,
+                employer: state.employers[e].name,
                 skills: [],
                 tools: [],
                 tech: [],
                 deliverables: [],
                 path: state.employers[e].projects[p].path
               };
+
+              if (state.employers[e].projects[p].img) {
+                project.img = state.employers[e].projects[p].img;
+              }
 
               if (state.employers[e].projects[p].tasks) {
                 project.tasks = state.employers[e].projects[p].tasks;

@@ -3,7 +3,9 @@
     <h2 class="project-name">{{ project.name }}</h2>
     <p class="project-description">{{ project.description }}</p>
 
-    <div class="project-image"></div>
+    <div class="project-image" v-if="project.img">
+      <b-img :src="project.img" fluid alt="Responsive image"></b-img>
+    </div>
 
     <b-row class="resume-abilities-header">
       <b-col md="6" v-if="project.skills.length > 0">
@@ -83,7 +85,7 @@
           <hr />
           <h4>{{ deliverable.title }}</h4>
           <div class="deliverable-image">
-            <b-img :src="deliverable.img" fluid alt="Responsive image"></b-img>
+            <b-img :src="deliverable.img" fluid :alt="deliverable.title"></b-img>
           </div>
           <p>{{ deliverable.description }}</p>
         </b-col>
@@ -146,7 +148,7 @@ hr {
 }
 .project-image,
 .deliverable-image {
-  width: 100%;
+  width: 930px;
   background-color: #edf1f4;
 }
 .project-image {

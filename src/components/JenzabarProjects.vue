@@ -2,11 +2,13 @@
   <div class="jenzabar-projects">
     <b-row
       class="project"
-      v-for="project in this.$store.state.employers[0].projects"
+      v-for="project in projects"
       v-bind:key="project.id"
     >
       <b-col>
-        <div class="project-image"></div>
+        <div class="project-image">
+          <b-img :src="project.img" fluid :alt="project.name"></b-img>
+        </div>
         <b-row>
           <b-col>
             <h6 class="project-name">{{ project.name }}</h6>
@@ -31,8 +33,26 @@ export default {
   store,
   data() {
     return {
-      store
+      loading: false,
+      projects: [],
+      error: null
     };
+  },
+  created() {
+    // fetch the data when the view is created and the data is
+    // already being observed
+    this.fetchData();
+  },
+  methods: {
+    fetchData() {
+      let projects = this.$store.getters.projects;
+
+      for (let p = 0; p < projects.length; p++) {
+        if (projects[p].employer == "Jenzabar, Inc.") {
+          this.projects.push(projects[p]);
+        }
+      }
+    }
   }
 };
 </script>
