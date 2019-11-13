@@ -25,6 +25,22 @@
   </b-container>
 </template>
 
+<script>
+export default {
+  name: "about",
+  created() {
+    // fetch the data when the view is created and the data is
+    // already being observed
+    this.scrollToTop();
+  },
+  methods: {
+    scrollToTop() {
+      window.scrollTo(0, 0);
+    }
+  }
+};
+</script>
+
 <style scoped>
 .about-image {
   width: 100%;

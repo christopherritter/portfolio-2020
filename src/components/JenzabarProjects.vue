@@ -6,7 +6,7 @@
       v-bind:key="project.id"
     >
       <b-col>
-        <div class="project-image">
+        <div class="project-image bg-light">
           <b-img :src="project.img" fluid :alt="project.name"></b-img>
         </div>
         <b-row>
@@ -76,7 +76,7 @@ a {
 .project-image {
   width: 100%;
   height: 540px;
-  background-color: #edf1f4;
+  /* background-color: #edf1f4; */
 }
 .project-name,
 .project-description {

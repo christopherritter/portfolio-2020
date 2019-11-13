@@ -3,7 +3,7 @@
     <h2 class="project-name">{{ project.name }}</h2>
     <p class="project-description">{{ project.description }}</p>
 
-    <div class="project-image" v-if="project.img">
+    <div class="project-image bg-light" v-if="project.img">
       <b-img :src="project.img" fluid alt="Responsive image"></b-img>
     </div>
 
@@ -84,7 +84,7 @@
         <b-col>
           <hr />
           <h4>{{ deliverable.title }}</h4>
-          <div class="deliverable-image">
+          <div class="deliverable-image bg-light">
             <b-img :src="deliverable.img" fluid :alt="deliverable.title"></b-img>
           </div>
           <p>{{ deliverable.description }}</p>
@@ -149,7 +149,7 @@ hr {
 .project-image,
 .deliverable-image {
   width: 930px;
-  background-color: #edf1f4;
+  /* background-color: #edf1f4; */
 }
 .project-image {
   height: 540px;

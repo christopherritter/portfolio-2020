@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <b-navbar id="nav" toggleable="lg" type="light">
+    <b-navbar id="nav" fixed="top" variant="light" toggleable="lg" type="light">
       <b-navbar-brand to="/">Christopher Ritter</b-navbar-brand>
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
       <b-collapse id="nav-collapse" is-nav>
