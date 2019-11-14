@@ -34,20 +34,14 @@
             <b-button
               size="lg"
               variant="primary"
-              :href="
-                `${publicPath}files/Christopher-Ritter_Resume-06-04-2019.pdf`
-              "
-              download
+              href="https://app.box.com/s/gws18gc1hna8g7tnri88ncjeev4vthtm"
               target="_blank"
               >Adobe PDF</b-button
             >
             <b-button
               size="lg"
               variant="outline-light"
-              :href="
-                `${publicPath}files/Christopher-Ritter_Resume-06-04-2019.docx`
-              "
-              download
+              href="https://app.box.com/s/vighxx386p10zqthjs22yjyoitkfuhnq"
               target="_blank"
               >Microsoft Word</b-button
             >
@@ -56,7 +50,57 @@
       </b-container>
       <hr />
       <b-container class="copyright-info">
-        <p>&copy; 2019 Christopher Ritter</p>
+        <b-row>
+          <b-col>
+            <p>&copy; 2019 Christopher Ritter</p>
+          </b-col>
+          <b-col class="text-right">
+            <b-link
+              href="mailto:christopherritter@gmail.com"
+              class="footer-icon-button"
+              target="_blank"
+            >
+              <b-img
+                :src="`/img/email.svg`"
+                class="footer-icon"
+                alt="Email"
+              ></b-img>
+            </b-link>
+            <b-link
+              href="http://www.twitter.com/geddon"
+              class="footer-icon-button"
+              target="_blank"
+            >
+              <b-img
+                :src="`/img/twitter.svg`"
+                class="footer-icon"
+                alt="Twitter"
+              ></b-img>
+            </b-link>
+            <b-link
+              href="http://www.github.com/christopherritter"
+              class="footer-icon-button"
+              target="_blank"
+            >
+              <b-img
+                :src="`/img/github-face.svg`"
+                class="footer-icon"
+                alt="Github"
+              ></b-img>
+            </b-link>
+            <b-link
+              href="http://www.linkedin.com/in/christopherritter"
+              class="footer-icon-button"
+              target="_blank"
+            >
+              <b-img
+                :src="`/img/linkedin.svg`"
+                class="footer-icon"
+                alt="LinkedIn"
+              ></b-img>
+            </b-link>
+          </b-col>
+        </b-row>
       </b-container>
     </b-container>
   </div>
@@ -64,12 +108,7 @@
 
 <script>
 export default {
-  name: "app",
-  data() {
-    return {
-      publicPath: process.env.BASE_URL
-    };
-  }
+  name: "app"
 };
 </script>
 
@@ -171,5 +210,18 @@ p {
 .download-resume-buttons .btn {
   font-size: 1.05rem;
   margin-right: 1em;
+}
+
+.footer-icon-button {
+  margin-right: 0.25em;
+  padding: 0 0.25em;
+}
+
+.footer-icon {
+  width: 24px;
+  height: 24px;
+  margin: 0;
+  padding: 0;
+  fill: #ffffff; /* not working with b-image */
 }
 </style>

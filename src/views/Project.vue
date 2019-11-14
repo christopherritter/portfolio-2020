@@ -155,12 +155,12 @@ hr {
 }
 .project-image,
 .deliverable-image {
-  width: 930px;
+  width: 100%;
+  height: auto;
   /* background-color: #edf1f4; */
 }
 .project-image {
-  height: 540px;
-  margin: 6em 0 3em 0;
+  margin: 4em 0 3em 0;
 }
 .deliverable-image {
   margin: 3em 0;

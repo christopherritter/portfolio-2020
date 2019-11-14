@@ -71,7 +71,7 @@ a {
 }
 .project-image {
   width: 100%;
-  height: 540px;
+  height: auto;
   /* background-color: #edf1f4; */
   margin-bottom: 0.675em;
 }

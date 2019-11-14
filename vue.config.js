@@ -1,38 +1,40 @@
 module.exports = {
   chainWebpack: config => {
-    /* Remove the default rule */
-    const pdfRule = config.module.rule("pdf").test(/\.pdf$/);
-    const docxRule = config.module.rule("docx").test(/\.docx$/);
+    const svgRule = config.module.rule("svg");
+    svgRule.uses.clear();
+    // add replacement loader(s)
+    svgRule.use("vue-svg-loader").loader("vue-svg-loader");
 
-    pdfRule.uses.clear();
-    docxRule.uses.clear();
-
-    /* Custom PDF loader */
-    pdfRule
-      .use("file-loader")
-
-      .loader("file-loader")
+    config.module
+      .rule("vue")
+      .use("vue-loader")
+      .loader("vue-loader")
       .tap(options => {
-        const newOptions = {
-          name: "files/[name].[ext]"
+        options.transformAssetUrls = {
+          img: "src",
+          image: "xlink:href",
+          "b-img": "src",
+          "b-img-lazy": ["src", "blank-src"],
+          "b-card": "img-src",
+          "b-card-img": "src",
+          "b-card-img-lazy": ["src", "blank-src"],
+          "b-carousel-slide": "img-src",
+          "b-embed": "src"
         };
 
-        return { ...options, ...newOptions };
-      })
-      .end();
+        return options;
+      });
 
-    /* Custom DOCX loader */
-    docxRule
-      .use("file-loader")
+    // config.module
+    //   .rule("pdf")
+    //   .test(/\.pdf$/)
+    //   .use("file-loader")
+    //   .loader("file-loader");
 
-      .loader("file-loader")
-      .tap(options => {
-        const newOptions = {
-          name: "files/[name].[ext]"
-        };
-
-        return { ...options, ...newOptions };
-      })
-      .end();
+    // config.module
+    //   .rule("docx")
+    //   .test(/\.docx$/)
+    //   .use("file-loader")
+    //   .loader("file-loader");
   }
 };
