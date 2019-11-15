@@ -56,7 +56,7 @@
           </b-col>
           <b-col class="text-right">
             <b-link
-              href="mailto:christopherritter@gmail.com"
+              href="mailto:hello@christopherritter.com"
               class="footer-icon-button"
               target="_blank"
             >

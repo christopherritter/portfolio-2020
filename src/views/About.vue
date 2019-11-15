@@ -3,24 +3,42 @@
     <div class="about-image"></div>
     <h2 class="about-me">About me</h2>
     <p class="lead">
-      Hello! I’m Aleksi Tappura, a freelance designer focused on digital product
-      design. I collaborate with passionate people and companies to create
-      products and services that have exceptional user experience.
+      My name is Christopher Ritter. I'm a designer with more than a decade of
+      experience building interfaces for web, mobile, and desktop applications.
+      I bridge the gap between design and development by focusing on the
+      technlology that forms the basis of the user experience.
     </p>
     <p>
-      I believe in working directly with the end-user from the beginning, to
-      create solutions that are genuinely desirable, feasible and viable for the
-      business and the users. In practice, this means a lot of experiments,
-      prototypes and stakeholder interviews.
+      In practical terms, I take a lean approach to UX design. This approach
+      focuses on prototyping to gather feedback from primary stakeholders. As
+      someone who likes to get their hands dirty working in code, I prefer to
+      build prototypes that leverage the current technology stack. This makes it
+      easier to iterate through multiple concepts and push the final solution
+      into production.
     </p>
     <p>
-      I’m currently available for new projects, so send me a message and let’s
-      discuss how I can help you. I’m open to work both on-site in Helsinki, or
-      remotely.
+      Lately I have become obsessed with the promise of design systems. I think
+      of them like cataloges that PMs can use to improve their products. These
+      cataloges provide a common language that speaks volumes to designers and
+      developers, and end users as well through well crafted, consistant
+      experiences across a variety of platforms and devices.
     </p>
     <p>
-      You can also follow me on Twitter, Dribbble, LinkedIn, or reach out via
-      email - hello@aleksitappura.com.
+      If you want to learn more about my obsessions you can follow me on
+      <b-link href="http://www.twitter.com/geddon" target="_blank"
+        >Twitter</b-link
+      >,
+      <b-link href="http://www.github.com/christopherritter" target="_blank"
+        >GitHub</b-link
+      >,
+      <b-link
+        href="http://www.linkedin.com/in/christopherritter"
+        target="_blank"
+        >LinkedIn</b-link
+      >, or reach out via email -
+      <b-link href="mailto:hello@christopherritter.com" target="_blank"
+        >hello@christopherritter.com</b-link
+      >.
     </p>
   </b-container>
 </template>
