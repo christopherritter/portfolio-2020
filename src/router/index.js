@@ -39,12 +39,4 @@ const router = new VueRouter({
   routes
 });
 
-router.afterEach((to) => {
-  gtag('config', 'UA-139579603-1', {
-    page_path: to.fullPath,
-    app_name: 'Web Portfolio 2020',
-    send_page_view: true,
-  });
-});
-
 export default router;
