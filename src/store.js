@@ -106,34 +106,46 @@ export default new Vuex.Store({
                 tech: ["ASCX", "Bootstrap", "Sass", "jQuery"]
               },
               {
-                description: 
+                description:
                   "Designed new base theme to implement the new branding guidelines for Jenzabar products.",
-                  skills: ["UX", "UI", "Prototyping", "Front-End", "Visual Design"],
-                  tools: ["Adobe XD", "VS Code"],
-                  tech: ["ASCX", "Bootstrap", "Sass", "jQuery"]
+                skills: [
+                  "UX",
+                  "UI",
+                  "Prototyping",
+                  "Front-End",
+                  "Visual Design"
+                ],
+                tools: ["Adobe XD", "VS Code"],
+                tech: ["ASCX", "Bootstrap", "Sass", "jQuery"]
               },
               {
-                description: 
+                description:
                   "Created a design system for JICS9 portlets to standardize front-end components.",
-                  skills: ["UX", "UI", "Prototyping", "Front-End", "Design Systems"],
-                  tools: ["Adobe XD", "VS Code"],
-                  tech: ["ASCX", "Bootstrap", "Sass", "jQuery"],
-                  deliverables: [
-                    {
-                      id: 0,
-                      title: "Jenzabar ICS Design System",
-                      img: "/img/JICS-Design-System_Home.png",
-                      description:
-                        "A new design system was created for JICS9 to display the components in use by the CX portlets."
-                    },
-                    {
-                      id: 1,
-                      title: "Design System Components",
-                      img: "/img/JICS-Design-System_Tables.png",
-                      description:
-                        "Code samples were provided alongside functional examples of the ASP.Net Web Controls."
-                    }
-                  ]
+                skills: [
+                  "UX",
+                  "UI",
+                  "Prototyping",
+                  "Front-End",
+                  "Design Systems"
+                ],
+                tools: ["Adobe XD", "VS Code"],
+                tech: ["ASCX", "Bootstrap", "Sass", "jQuery"],
+                deliverables: [
+                  {
+                    id: 0,
+                    title: "Jenzabar ICS Design System",
+                    img: "/img/JICS-Design-System_Home.png",
+                    description:
+                      "A new design system was created for JICS9 to display the components in use by the CX portlets."
+                  },
+                  {
+                    id: 1,
+                    title: "Design System Components",
+                    img: "/img/JICS-Design-System_Tables.png",
+                    description:
+                      "Code samples were provided alongside functional examples of the ASP.Net Web Controls."
+                  }
+                ]
               }
             ],
             path: "jics9"
@@ -170,10 +182,11 @@ export default new Vuex.Store({
                 ]
               },
               {
-                description: "Validated new concepts with users and reported findings to delivery team."
+                description:
+                  "Validated new concepts with users and reported findings to delivery team."
               },
               {
-                description: 
+                description:
                   "Created the base theme for CX 10 plus various other themes available through the settings."
               }
             ],
@@ -189,8 +202,12 @@ export default new Vuex.Store({
               {
                 description:
                   "Provided design assistance to local, remote, and offshore development teams.",
-                  skills: ["UX", "Visual Design"],
-                  tools: ["Adobe PhotoShop", "Adobe Illustrator", "Adobe InDesign"]
+                skills: ["UX", "Visual Design"],
+                tools: [
+                  "Adobe PhotoShop",
+                  "Adobe Illustrator",
+                  "Adobe InDesign"
+                ]
               },
               {
                 description:

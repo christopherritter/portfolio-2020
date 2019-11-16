@@ -65,7 +65,7 @@ export default {
   height: 22em;
   background-color: #edf1f4;
   margin-bottom: 60px;
-  background-image: url("/img/website-thumbnail.png");
+  background-image: url("/img/self-portrait.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
