@@ -32,8 +32,18 @@ export default {
 
 <style scoped>
 .about-me {
-  margin: 176px 0;
+  margin: 6em 0;
   line-height: 1.7;
   text-align: center;
+}
+@media (min-width: 320px) and (max-width: 500px) {
+  .about-me {
+    margin: 3em 0;
+  }
+}
+@media (max-width: 319px) {
+  .about-me {
+    margin: 2em 0;
+  }
 }
 </style>

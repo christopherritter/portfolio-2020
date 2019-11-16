@@ -142,21 +142,16 @@ export default {
   margin: 150px 0 0 0;
 }
 
-#footer .download-resume {
-  padding: 130px 0;
+#footer .download-resume h3 {
+  margin-top: 3em;
 }
 
 #footer hr {
-  margin: 0;
-}
-
-#footer .copyright-info {
-  padding: 12px 0;
+  margin: 6em 0 0.25em 0;
 }
 
 #footer .copyright-info p {
-  margin: 0;
-  padding: 0;
+  margin: 0.5em;
 }
 
 h1 {
@@ -210,17 +205,18 @@ p {
 .download-resume-buttons .btn {
   font-size: 1.05rem;
   margin-right: 1em;
+  margin-bottom: 1em;
 }
 
 .footer-icon-button {
   margin-right: 0.25em;
-  padding: 0 0.25em;
+  padding: 0;
 }
 
 .footer-icon {
   width: 24px;
   height: 24px;
-  margin: 0;
+  margin: 0.5em 0.25em;
   padding: 0;
   fill: #ffffff; /* not working with b-image */
 }

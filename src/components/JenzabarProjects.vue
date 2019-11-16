@@ -8,10 +8,10 @@
           </b-link>
         </div>
         <b-row>
-          <b-col>
+          <b-col lg="3" md="4" sm="12">
             <h6 class="project-name">{{ project.name }}</h6>
           </b-col>
-          <b-col cols="8">
+          <b-col col lg="9" md="8" sm="12">
             <p class="project-description">{{ project.description }}</p>
             <b-link :to="'projects/' + project.path" class="project-path"
               >More info</b-link
