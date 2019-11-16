@@ -32,35 +32,35 @@ export default new Vuex.Store({
                     title: "The All-New Career Explorer",
                     img: "/img/FYC_Career-Explorer.png",
                     description:
-                      "The updates to Find Your Calling included an entirely new way to navigate career choices. We called this a Career Explorer given the ability to filter the career cards according to the user's personal interests."
+                      "The updates to Find Your Calling included an entirely new way to navigate career choices. This was called the Career Explorer given its ability to search and filter career choices."
                   },
                   {
                     id: 1,
                     title: "The Improved Private Profile",
                     img: "/img/FYC_Private-Profile.png",
                     description:
-                      "The private profile was redesigned to allow for greater attention on the educational choices for each of the career paths. This was part of a larger effort to connect the users of the website to educational institutions."
+                      "The private profile was redesigned to focus on the educational choices for each of the career paths. This was part of a larger effort to connect prospective students to eductional institutions."
                   },
                   {
                     id: 2,
                     title: "Additional School Filters",
                     img: "/img/FYC_Schools-Filter.png",
                     description:
-                      "Additional filters were added to the list school listing for each of the career paths. These were designed for both desktop and mobile devices to align with the resulting list of eductional instutitions below the filters."
+                      "Additional filters were added to the school listing for each of the career paths. These were designed for both desktop and mobile devices to align with the eductional instutitions below the filters."
                   },
                   {
                     id: 3,
                     title: "Big Data School Headers",
                     img: "/img/FYC_School-Header.png",
                     description:
-                      "Visualized data for the schools was moved from the body of the original page into a new interactive header. The header was designed to be used on both desktop and mobile devices."
+                      "Visualized data for the schools was moved from the body of the original page into an interactive header. The header was designed to be used on both desktop and mobile devices."
                   }
                 ]
               },
               {
                 description:
                   "Implemented Pattern Lab to deliver redesigned elements for Find Your Calling.",
-                skills: ["UI", "Front-End"],
+                skills: ["UI", "Front-End", "Design Systems"],
                 tools: ["Pattern Lab", "VS Code"],
                 tech: ["NodeJS", "Bootstrap", "Sass", "Handlebars"],
                 deliverables: [
@@ -69,14 +69,14 @@ export default new Vuex.Store({
                     title: "FYC Design System",
                     img: "/img/FYC_Pattern-Lab.png",
                     description:
-                      "Pattern Lab was used to create a design system for Find Your Calling which leveraged existing style sheets and templates. This allowed it to integrate seamlessly with the pre-existing technology stack."
+                      "Pattern Lab was used to create a new design system for Find Your Calling which leveraged existing style sheets and templates. This enabled the design system to integrate seamlessly with the pre-existing technology stack."
                   }
                 ]
               },
               {
                 description:
                   "Created Google Analytics reports to measure the effectiveness of redesigned elements.",
-                skills: ["UX", "Reporting"],
+                skills: ["UX", "Reporting", "Ideation"],
                 tools: ["Google Analytics"],
                 deliverables: [
                   {
@@ -100,26 +100,40 @@ export default new Vuex.Store({
             tasks: [
               {
                 description:
-                  "Refactored ASP.Net ASCX templates for the online portal to utilize Bootstrap/Sass for responsive layouts.",
-                skills: ["UX", "UI", "Prototyping"],
+                  "Implemented responsive layouts for JICS9 portlets using Bootstrap and jQuery.",
+                skills: ["UX", "UI", "Prototyping", "Front-End"],
                 tools: ["Adobe XD", "VS Code"],
-                tech: ["ASCX", "Bootstrap", "Sass"],
-                deliverables: [
-                  {
-                    id: 0,
-                    title: "Jenzabar ICS Design System",
-                    img: "/img/JICS-Design-System_Home.png",
-                    description:
-                      "A new design system was created for Jenzabar ICS portlets completely from scratch using the application to display ASP.Net content."
-                  },
-                  {
-                    id: 1,
-                    title: "Design System Components",
-                    img: "/img/JICS-Design-System_Tables.png",
-                    description:
-                      "Code samples were provided alongside functional examples of the Components which are constructed from ASP.Net Web Controls, and include the necessary Bootstrap to assist the developers."
-                  }
-                ]
+                tech: ["ASCX", "Bootstrap", "Sass", "jQuery"]
+              },
+              {
+                description: 
+                  "Designed new base theme to implement the new branding guidelines for Jenzabar products.",
+                  skills: ["UX", "UI", "Prototyping", "Front-End", "Visual Design"],
+                  tools: ["Adobe XD", "VS Code"],
+                  tech: ["ASCX", "Bootstrap", "Sass", "jQuery"]
+              },
+              {
+                description: 
+                  "Created a design system for JICS9 portlets to standardize front-end components.",
+                  skills: ["UX", "UI", "Prototyping", "Front-End", "Design Systems"],
+                  tools: ["Adobe XD", "VS Code"],
+                  tech: ["ASCX", "Bootstrap", "Sass", "jQuery"],
+                  deliverables: [
+                    {
+                      id: 0,
+                      title: "Jenzabar ICS Design System",
+                      img: "/img/JICS-Design-System_Home.png",
+                      description:
+                        "A new design system was created for JICS9 to display the components in use by the CX portlets."
+                    },
+                    {
+                      id: 1,
+                      title: "Design System Components",
+                      img: "/img/JICS-Design-System_Tables.png",
+                      description:
+                        "Code samples were provided alongside functional examples of the ASP.Net Web Controls."
+                    }
+                  ]
               }
             ],
             path: "jics9"
@@ -133,11 +147,12 @@ export default new Vuex.Store({
             tasks: [
               {
                 description:
-                  "Redesigned the front-end for the desktop version of Jenzabar CX using QT Creator.",
+                  "Designed the front-end for the new desktop version of Jenzabar CX 10.",
                 skills: [
                   "UX",
                   "UI",
                   "Prototyping",
+                  "Front-End",
                   "Research",
                   "Analysis",
                   "Reporting"
@@ -153,6 +168,13 @@ export default new Vuex.Store({
                       "The home screen for CX 10 provides users with a searchable directory of their available applications. When the user launches an application it appears on a recently viewed list next to the directory."
                   }
                 ]
+              },
+              {
+                description: "Validated new concepts with users and reported findings to delivery team."
+              },
+              {
+                description: 
+                  "Created the base theme for CX 10 plus various other themes available through the settings."
               }
             ],
             path: "cx10"
@@ -166,16 +188,14 @@ export default new Vuex.Store({
             tasks: [
               {
                 description:
-                  "Provided design assistance to local, remote, and offshore development teams."
+                  "Provided design assistance to local, remote, and offshore development teams.",
+                  skills: ["UX", "Visual Design"],
+                  tools: ["Adobe PhotoShop", "Adobe Illustrator", "Adobe InDesign"]
               },
               {
                 description:
-                  "Delivered wireframes and various UI elements (fonts, icons, colors) within an Agile environment."
-              },
-              {
-                description:
-                  "Developed Java prototypes using SmartGWT to demonstrate interactions and responsive layouts.",
-                skills: ["UI", "Prototyping"],
+                  "Prototyped SmartGWT components to demonstrate user interactions and responsive layouts.",
+                skills: ["UI", "Prototyping", "Front-End"],
                 tools: ["Visual Studio"],
                 tech: ["SmartGWT"]
               }
@@ -235,7 +255,7 @@ export default new Vuex.Store({
                 id: 0,
                 description:
                   "Brainstormed concepts with machine operators using Gamestorming techniques to generate new ideas.",
-                skills: ["UX", "Ideation"]
+                skills: ["UX", "Brainstorming"]
               },
               {
                 id: 1,
@@ -304,7 +324,7 @@ export default new Vuex.Store({
                 id: 2,
                 description:
                   "Lead brainstorming workshops with legal professionals using Gamestorming techniques to generate new ideas.",
-                skills: ["UX", "Ideation"]
+                skills: ["UX", "Brainstorming"]
               },
               {
                 id: 3,
@@ -326,7 +346,7 @@ export default new Vuex.Store({
                   "UX",
                   "Research",
                   "Analysis",
-                  "Ideation",
+                  "Brainstorming",
                   "Reporting",
                   "Prototyping"
                 ]
@@ -353,13 +373,13 @@ export default new Vuex.Store({
                 id: 0,
                 description:
                   "Planned the digital experience of social, mobile, and web applications for corporate clients that included P&G, Pearle Vision, and Red Bull.",
-                skills: ["UX", "Social Media", "Mobile Design", "Web Design"]
+                skills: ["UX", "Social Media"]
               },
               {
                 id: 1,
                 description:
                   "Lead brainstorming sessions with creative, technical, and business leads to generate new ideas.",
-                skills: ["UX", "Ideation"]
+                skills: ["UX", "Brainstorming"]
               },
               {
                 id: 2,
