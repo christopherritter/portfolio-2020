@@ -7,7 +7,21 @@
       <b-img :src="project.img" fluid :alt="project.name"></b-img>
     </div>
 
-    <b-row class="resume-abilities-header">
+    <div class="project-tasks">
+      <h6 class="bullet-header">My role</h6>
+      <b-row class="tasks" v-for="task in project.tasks" v-bind:key="task.id">
+        <b-col>
+          <div class="bullet-item">
+            <div class="bullet"></div>
+            <div class="bullet-text">{{ task.description }}</div>
+          </div>
+        </b-col>
+      </b-row>
+    </div>
+
+    <hr />
+
+    <b-row class="project-abilities">
       <b-col md="6" v-if="project.skills.length > 0">
         <b-row>
           <b-col>
@@ -22,7 +36,7 @@
             v-bind:key="skill.id"
           >
             <div class="bullet"></div>
-            <div class="bullet-text">{{ skill }}</div>
+            <div class="bullet-text">{{ skill.label }}</div>
           </b-col>
         </b-row>
       </b-col>
@@ -40,7 +54,7 @@
               v-bind:key="tool.id"
             >
               <div class="bullet"></div>
-              <div class="bullet-text">{{ tool }}</div>
+              <div class="bullet-text">{{ tool.label }}</div>
             </div>
           </b-col>
         </b-row>
@@ -59,25 +73,12 @@
               v-bind:key="technology.id"
             >
               <div class="bullet"></div>
-              <div class="bullet-text">{{ technology }}</div>
+              <div class="bullet-text">{{ technology.label }}</div>
             </div>
           </b-col>
         </b-row>
       </b-col>
     </b-row>
-
-    <hr />
-
-    <div class="project-tasks" v-for="task in taskList" v-bind:key="task.id">
-      <b-row v-if="project.name == task.project" class="tasks">
-        <b-col>
-          <div class="bullet-item">
-            <div class="bullet"></div>
-            <div class="bullet-text">{{ task.description }}</div>
-          </div>
-        </b-col>
-      </b-row>
-    </div>
 
     <div class="project-deliverables" v-if="project.deliverables.length > 0">
       <b-row
@@ -137,11 +138,6 @@ export default {
 
       window.scrollTo(0, 0);
     }
-  },
-  computed: {
-    taskList() {
-      return this.$store.getters.tasks;
-    }
   }
 };
 </script>
@@ -164,13 +160,13 @@ hr {
 }
 .deliverable-image {
   margin: 3em 0;
-  padding: 2em;
+  /* padding: 2em; */
 }
-.deliverable-image img {
+/* .deliverable-image img {
   -webkit-box-shadow: 0 20px 16px -16px rgba(0, 0, 0, 0.15);
   -moz-box-shadow: 0 20px 16px -16px rgba(0, 0, 0, 0.15);
   box-shadow: 0 20px 16px -16px rgba(0, 0, 0, 0.15);
-}
+} */
 .bullet-header {
   font-family: "Montserrat SemiBold", Helvetica, Arial, sans-serif;
 }

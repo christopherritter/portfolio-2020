@@ -3,7 +3,9 @@
     <b-row class="project" v-for="project in projects" v-bind:key="project.id">
       <b-col>
         <div class="project-image bg-light" v-if="project.img">
-          <b-img :src="project.img" fluid :alt="project.name"></b-img>
+          <b-link :to="'projects/' + project.path">
+            <b-img :src="project.img" fluid :alt="project.name"></b-img>
+          </b-link>
         </div>
         <b-row>
           <b-col>

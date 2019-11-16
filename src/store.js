@@ -18,11 +18,75 @@ export default new Vuex.Store({
             name: "Find Your Calling",
             img: "/img/FYC.png",
             description:
-              "Online quiz which identifies the users career paths and connects them with relevant educational instutions.",
+              "Find Your Calling helps prospective students identify career paths that match their personal interests. The website provides detailed information about employment opportunities in each state, plus the ability to connect with local colleges and universities that offer relevant courses.",
             tasks: [
               {
                 description:
-                  "Implemented Pattern Lab to deliver the new front end for Find Your Calling."
+                  "Redesigned elements of Find Your Calling to focus on educational institutions.",
+                skills: ["UX", "UI", "Visual Design", "Prototyping"],
+                tools: ["Adobe XD", "VS Code"],
+                tech: ["Bootstrap", "Sass", "Handlebars"],
+                deliverables: [
+                  {
+                    id: 0,
+                    title: "The All-New Career Explorer",
+                    img: "/img/FYC_Career-Explorer.png",
+                    description:
+                      "The updates to Find Your Calling included an entirely new way to navigate career choices. We called this a Career Explorer given the ability to filter the career cards according to the user's personal interests."
+                  },
+                  {
+                    id: 1,
+                    title: "The Improved Private Profile",
+                    img: "/img/FYC_Private-Profile.png",
+                    description:
+                      "The private profile was redesigned to allow for greater attention on the educational choices for each of the career paths. This was part of a larger effort to connect the users of the website to educational institutions."
+                  },
+                  {
+                    id: 2,
+                    title: "Additional School Filters",
+                    img: "/img/FYC_Schools-Filter.png",
+                    description:
+                      "Additional filters were added to the list school listing for each of the career paths. These were designed for both desktop and mobile devices to align with the resulting list of eductional instutitions below the filters."
+                  },
+                  {
+                    id: 3,
+                    title: "Big Data School Headers",
+                    img: "/img/FYC_School-Header.png",
+                    description:
+                      "Visualized data for the schools was moved from the body of the original page into a new interactive header. The header was designed to be used on both desktop and mobile devices."
+                  }
+                ]
+              },
+              {
+                description:
+                  "Implemented Pattern Lab to deliver redesigned elements for Find Your Calling.",
+                skills: ["UI", "Front-End"],
+                tools: ["Pattern Lab", "VS Code"],
+                tech: ["NodeJS", "Bootstrap", "Sass", "Handlebars"],
+                deliverables: [
+                  {
+                    id: 0,
+                    title: "FYC Design System",
+                    img: "/img/FYC_Pattern-Lab.png",
+                    description:
+                      "Pattern Lab was used to create a design system for Find Your Calling which leveraged existing style sheets and templates. This allowed it to integrate seamlessly with the pre-existing technology stack."
+                  }
+                ]
+              },
+              {
+                description:
+                  "Created Google Analytics reports to measure the effectiveness of redesigned elements.",
+                skills: ["UX", "Reporting"],
+                tools: ["Google Analytics"],
+                deliverables: [
+                  {
+                    id: 0,
+                    title: "Google Analytics Reporting",
+                    img: "/img/FYC_Google-Reports.png",
+                    description:
+                      "The inclusion of Google Analytics allowed for the creation of detailed reports which showed the conversion rates for our project targets. These reports helped rate the efficacy of the designs and guide future enhancements."
+                  }
+                ]
               }
             ],
             path: "fyc"
@@ -32,7 +96,7 @@ export default new Vuex.Store({
             name: "Jenzabar ICS 9",
             img: "/img/JICS9.png",
             description:
-              "Online web portal which provides access to CX customer data through the Internet.",
+              "The latest release of the Jenzabar Internet Campus Solution features a suite of online portlets which have been redesigned for use on mobile and deskotop browsers, plus an all-new theme to align with the company's new branding guidelines.",
             tasks: [
               {
                 description:
@@ -65,7 +129,7 @@ export default new Vuex.Store({
             name: "Jenzabar CX 10",
             img: "/img/CX10.png",
             description:
-              "Jenzabar JX is a desktop version of CX that completely transforms the user experience.",
+              "Jenzabar CX 10 is an all-new version of the classic Jenzbar CX suite of campus tools that transforms the old user interface from an 80-character terminal screen to a modern, desktop experience for both PCs and Macs.",
             tasks: [
               {
                 description:
@@ -98,7 +162,7 @@ export default new Vuex.Store({
             name: "Jenzabar JX",
             img: "/img/JX.png",
             description:
-              "Jenzabar JX offers a suite of tools for colleges and universities built in Java and Smart GWT.",
+              "Jenzabar JX provides online browser access to the classic Jenzabar CX suite of tools for colleges and universities. The new platform was built in Java and uses Smart GWT components to display the user interface.",
             tasks: [
               {
                 description:
@@ -340,6 +404,7 @@ export default new Vuex.Store({
               description: state.employers[e].projects[p].description,
               name: state.employers[e].projects[p].name,
               employer: state.employers[e].name,
+              tasks: state.employers[e].projects[p].tasks,
               skills: [],
               tools: [],
               tech: [],
@@ -365,9 +430,20 @@ export default new Vuex.Store({
                     s < state.employers[e].projects[p].tasks[t].skills.length;
                     s++
                   ) {
-                    project.skills.push(
-                      state.employers[e].projects[p].tasks[t].skills[s]
+                    let skill = {
+                      label: state.employers[e].projects[p].tasks[t].skills[s]
+                    };
+                    let pos = project.skills.findIndex(
+                      i =>
+                        i.label ===
+                        state.employers[e].projects[p].tasks[t].skills[s]
                     );
+                    if (pos >= 0) {
+                      project.skills[pos].count++;
+                    } else {
+                      skill.count = 1;
+                      project.skills.push(skill);
+                    }
                   }
                 }
 
@@ -377,9 +453,20 @@ export default new Vuex.Store({
                     o < state.employers[e].projects[p].tasks[t].tools.length;
                     o++
                   ) {
-                    project.tools.push(
-                      state.employers[e].projects[p].tasks[t].tools[o]
+                    let tool = {
+                      label: state.employers[e].projects[p].tasks[t].tools[o]
+                    };
+                    let pos = project.tools.findIndex(
+                      i =>
+                        i.label ===
+                        state.employers[e].projects[p].tasks[t].tools[o]
                     );
+                    if (pos >= 0) {
+                      project.tools[pos].count++;
+                    } else {
+                      tool.count = 1;
+                      project.tools.push(tool);
+                    }
                   }
                 }
 
@@ -389,9 +476,20 @@ export default new Vuex.Store({
                     c < state.employers[e].projects[p].tasks[t].tech.length;
                     c++
                   ) {
-                    project.tech.push(
-                      state.employers[e].projects[p].tasks[t].tech[c]
+                    let technology = {
+                      label: state.employers[e].projects[p].tasks[t].tech[c]
+                    };
+                    let pos = project.tech.findIndex(
+                      i =>
+                        i.label ===
+                        state.employers[e].projects[p].tasks[t].tech[c]
                     );
+                    if (pos >= 0) {
+                      project.tech[pos].count++;
+                    } else {
+                      technology.count = 1;
+                      project.tech.push(technology);
+                    }
                   }
                 }
 
@@ -524,31 +622,6 @@ export default new Vuex.Store({
                     }
                   }
                 }
-
-                // if (state.employers[e].projects[p].tasks[t].tech) {
-                //   for (
-                //     let c = 0;
-                //     c < state.employers[e].projects[p].tasks[t].tech.length;
-                //     c++
-                //   ) {
-                //     project.tech.push(
-                //       state.employers[e].projects[p].tasks[t].tech[c]
-                //     );
-                //   }
-                // }
-
-                // if (state.employers[e].projects[p].tasks[t].deliverables) {
-                //   for (
-                //     let d = 0;
-                //     d <
-                //     state.employers[e].projects[p].tasks[t].deliverables.length;
-                //     d++
-                //   ) {
-                //     project.deliverables.push(
-                //       state.employers[e].projects[p].tasks[t].deliverables[d]
-                //     );
-                //   }
-                // }
               }
             }
           }
