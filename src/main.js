@@ -11,15 +11,9 @@ Vue.config.productionTip = false;
 
 Vue.use(BootstrapVue);
 
-const isProd = process.env.NODE_ENV === 'production';
-
 Vue.use(VueAnalytics, {
   id: "UA-139579603-1",
-  router,
-  debug: {
-    enabled: !isProd,
-    sendHitTask: isProd
-  }
+  router
 });
 
 new Vue({
