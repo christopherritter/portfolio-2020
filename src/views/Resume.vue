@@ -4,21 +4,22 @@
       <b-col>
         <h1 class="resume-name">Christopher Ritter</h1>
         <h4 class="resume-title">
-          User Experience Designer / Front-End Developer
+          User Experience Designer / User Interface Developer
         </h4>
       </b-col>
     </b-row>
 
     <b-row class="resume-abilities">
-      <b-col md="6">
+      <b-col class="resume-skills" md="6" sm="12">
         <b-row>
-          <b-col>
+          <b-col sm="6" xs="12">
             <h6 class="bullet-header">Skills</h6>
           </b-col>
         </b-row>
         <b-row>
           <b-col
-            cols="6"
+            sm="6"
+            xs="12"
             class="bullet-item"
             v-for="skill in skillList.slice(0, 10)"
             v-bind:key="skill.id"
@@ -28,7 +29,7 @@
           </b-col>
         </b-row>
       </b-col>
-      <b-col cols="3">
+      <b-col class="resume-tools" sm="3" xs="12">
         <b-row>
           <b-col>
             <h6 class="bullet-header">Tools</h6>
@@ -47,7 +48,7 @@
           </b-col>
         </b-row>
       </b-col>
-      <b-col cols="3">
+      <b-col class="resume-tech" sm="3" xs="12">
         <b-row>
           <b-col>
             <h6 class="bullet-header">Tech</h6>
@@ -148,6 +149,11 @@ export default {
   margin-top: 10rem;
   margin-bottom: 0;
 }
+@media (min-width: 1200px) {
+  .resume-name {
+    font-size: 4.5rem;
+  }
+}
 .resume-title {
   font-family: "Montserrat", Helvetica, Arial, sans-serif;
   margin-bottom: 10rem;
@@ -157,6 +163,11 @@ export default {
 }
 .resume-abilities {
   margin-bottom: 8rem;
+}
+.resume-skills,
+.resume-tools,
+.resume-tech {
+  margin-bottom: 1em;
 }
 .bullet-header {
   font-family: "Montserrat SemiBold", Helvetica, Arial, sans-serif;

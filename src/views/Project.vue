@@ -22,15 +22,15 @@
     <hr />
 
     <b-row class="project-abilities">
-      <b-col md="6" v-if="project.skills.length > 0">
+      <b-col class="project-skills" md="6" sm="12" v-if="project.skills.length > 0">
         <b-row>
-          <b-col>
+          <b-col sm="6" xs="12">
             <h6 class="bullet-header">Skills</h6>
           </b-col>
         </b-row>
         <b-row>
           <b-col
-            cols="6"
+            sm="6" xs="12"
             class="bullet-item"
             v-for="skill in project.skills"
             v-bind:key="skill.id"
@@ -40,7 +40,7 @@
           </b-col>
         </b-row>
       </b-col>
-      <b-col cols="3" v-if="project.tools.length > 0">
+      <b-col class="project-tools" sm="3" xs="12" v-if="project.tools.length > 0">
         <b-row>
           <b-col>
             <h6 class="bullet-header">Tools</h6>
@@ -59,7 +59,7 @@
           </b-col>
         </b-row>
       </b-col>
-      <b-col cols="3" v-if="project.tech.length > 0">
+      <b-col class="project-tech" sm="3" xs="12" v-if="project.tech.length > 0">
         <b-row>
           <b-col>
             <h6 class="bullet-header">Tech</h6>
@@ -148,6 +148,11 @@ hr {
 }
 .project-name {
   margin: 4em 0 0.5em 0;
+}
+.project-skills,
+.project-tools,
+.project-tech {
+  margin-bottom: 1em;
 }
 .project-image,
 .deliverable-image {
