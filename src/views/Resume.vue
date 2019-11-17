@@ -29,7 +29,7 @@
           </b-col>
         </b-row>
       </b-col>
-      <b-col class="resume-tools" sm="3" xs="12">
+      <b-col class="resume-tools" md="3" sm="6" xs="12">
         <b-row>
           <b-col>
             <h6 class="bullet-header">Tools</h6>
@@ -48,7 +48,7 @@
           </b-col>
         </b-row>
       </b-col>
-      <b-col class="resume-tech" sm="3" xs="12">
+      <b-col class="resume-tech" md="3" sm="6" xs="12">
         <b-row>
           <b-col>
             <h6 class="bullet-header">Tech</h6>

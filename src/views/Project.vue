@@ -40,7 +40,7 @@
           </b-col>
         </b-row>
       </b-col>
-      <b-col class="project-tools" sm="3" xs="12" v-if="project.tools.length > 0">
+      <b-col class="project-tools" md="3" sm="6" xs="12" v-if="project.tools.length > 0">
         <b-row>
           <b-col>
             <h6 class="bullet-header">Tools</h6>
@@ -59,7 +59,7 @@
           </b-col>
         </b-row>
       </b-col>
-      <b-col class="project-tech" sm="3" xs="12" v-if="project.tech.length > 0">
+      <b-col class="project-tech" md="3" sm="6" xs="12" v-if="project.tech.length > 0">
         <b-row>
           <b-col>
             <h6 class="bullet-header">Tech</h6>
