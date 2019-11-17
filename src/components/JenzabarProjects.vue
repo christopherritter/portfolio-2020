@@ -48,6 +48,12 @@ export default {
       for (let p = 0; p < projects.length; p++) {
         if (projects[p].employer == "Jenzabar, Inc.") {
           this.projects.push(projects[p]);
+
+          this.$ga.event({
+            eventCategory: "projects",
+            eventAction: "employer",
+            eventValue: projects[p].employer
+          });
         }
       }
     }
