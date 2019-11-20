@@ -103,7 +103,37 @@ export default new Vuex.Store({
                   "Implemented responsive layouts for JICS9 portlets using Bootstrap and jQuery.",
                 skills: ["UX", "UI", "Prototyping", "Front-End"],
                 tools: ["Adobe XD", "VS Code"],
-                tech: ["ASCX", "Bootstrap", "Sass", "jQuery"]
+                tech: ["ASCX", "Bootstrap", "Sass", "jQuery", "FooTable"],
+                deliverables: [
+                  {
+                    id: 0,
+                    title: "CRM Student Portlets",
+                    img: "/img/JICS9_CRM-Student.png",
+                    description:
+                      "Implemented responsive layouts for CRM Student portlets which provide online access to student information. Used Bootstrap and various JavaScript libraries (e.g., jQuery and FooTable) to implement breakpoints within ASCX templates."
+                  },
+                  {
+                    id: 1,
+                    title: "CRM Candidate Portlets",
+                    img: "/img/JICS9_CRM-Candidate.png",
+                    description:
+                      "Implemented responsive layouts for CRM Candidate portlets which provide online access to information about potential candidates. Used Bootstrap and various JavaScript libraries (e.g., jQuery and FooTable) to implement breakpoints within ASCX templates."
+                  },
+                  {
+                    id: 2,
+                    title: "CRM Staff Portlets",
+                    img: "/img/JICS9_CRM-Staff.png",
+                    description:
+                      "Implemented responsive layouts for CRM Staff portlets which provide online access to employment information. Used Bootstrap and various JavaScript libraries (e.g., jQuery and FooTable) to implement breakpoints within ASCX templates."
+                  },
+                  {
+                    id: 3,
+                    title: "CRM Faculty Portlets",
+                    img: "/img/JICS9_CRM-Faculty.png",
+                    description:
+                      "Implemented responsive layouts for CRM Faculty portlets which provide online access to school resources for educators. Used Bootstrap and various JavaScript libraries (e.g., jQuery and FooTable) to implement breakpoints within ASCX templates."
+                  }
+                ]
               },
               {
                 description:
@@ -116,7 +146,16 @@ export default new Vuex.Store({
                   "Visual Design"
                 ],
                 tools: ["Adobe XD", "VS Code"],
-                tech: ["ASCX", "Bootstrap", "Sass", "jQuery"]
+                tech: ["ASCX", "Bootstrap", "Sass", "jQuery"],
+                deliverables: [
+                  {
+                    id: 0,
+                    title: "Jenzabar ICS Design System",
+                    img: "/img/JICS9_CX-Mobile-Theme.png",
+                    description:
+                      "Created a new base theme for JICS9 which incorporated the new branding guidlines for Jenzabar products. Special attention was given to the Sass variables so as to make customization easier for the end user."
+                  }
+                ]
               },
               {
                 description:
@@ -134,16 +173,9 @@ export default new Vuex.Store({
                   {
                     id: 0,
                     title: "Jenzabar ICS Design System",
-                    img: "/img/JICS-Design-System_Home.png",
+                    img: "/img/JICS9_Design-System.png",
                     description:
-                      "A new design system was created for JICS9 to display the components in use by the CX portlets."
-                  },
-                  {
-                    id: 1,
-                    title: "Design System Components",
-                    img: "/img/JICS-Design-System_Tables.png",
-                    description:
-                      "Code samples were provided alongside functional examples of the ASP.Net Web Controls."
+                      "A new design system was created for JICS9 to display the components in use by the CX portlets. The system leveraged the existing product to ensure the proper display of style sheets, templates, and other aspects of the design."
                   }
                 ]
               }
