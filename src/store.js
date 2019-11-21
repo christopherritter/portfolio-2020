@@ -187,7 +187,7 @@ export default new Vuex.Store({
             name: "Jenzabar CX 10",
             img: "/img/CX10.png",
             description:
-              "Jenzabar CX 10 is an all-new version of the classic Jenzbar CX suite of campus tools that transforms the old user interface from an 80-character terminal screen to a modern, desktop experience for both PCs and Macs.",
+              "Jenzabar CX 10 is a completely redesigned version of the classic Jenzbar CX client that transforms the old interface from an 80-character black-and-green terminal screen to a modern, desktop experience for both PCs and Macs.",
             tasks: [
               {
                 description:
@@ -207,19 +207,32 @@ export default new Vuex.Store({
                   {
                     id: 0,
                     title: "CX 10 Home Screen",
-                    img: "/img/CX10-Home.png",
+                    img: "/img/CX10_Home.png",
                     description:
                       "The home screen for CX 10 provides users with a searchable directory of their available applications. When the user launches an application it appears on a recently viewed list next to the directory."
+                  },
+                  {
+                    id: 1,
+                    title: "Login and Release Selection",
+                    img: "/img/CX10_Installer.png",
+                    description:
+                      "The desktop version of CX10 provided customers with secure access to their institutional data. After signing in, users have the option to select from multiple instances of their data (known as releases)."
+                  },
+                  {
+                    id: 2,
+                    title: "Personalized Fonts and Colors",
+                    img: "/img/CX10_User-Settings.png",
+                    description:
+                      "The settings screen enabled users to customize the font sizes and colors of their local client. Theme settings can be saved and loaded from a separate file to help enforce consistency at customer sites."
+                  },
+                  {
+                    id: 3,
+                    title: "Interactive Prototypes",
+                    img: "/img/CX10_Prototypes.png",
+                    description:
+                      "Interactive prototypes were created in Adobe XD to visualize the user interactions with the client. Feedback was gathered internally and from clients to help determine the look and feel of the application."
                   }
                 ]
-              },
-              {
-                description:
-                  "Validated new concepts with users and reported findings to delivery team."
-              },
-              {
-                description:
-                  "Created the base theme for CX 10 plus various other themes available through the settings."
               }
             ],
             path: "cx10"
