@@ -31,8 +31,11 @@ export default {
 </script>
 
 <style scoped>
+.work {
+  padding-top: 10em;
+}
 .about-me {
-  margin: 6em 0;
+  margin: 0 0 6em 0;
   line-height: 1.7;
   text-align: center;
 }

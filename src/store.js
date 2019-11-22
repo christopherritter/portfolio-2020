@@ -472,9 +472,71 @@ export default new Vuex.Store({
           }
         ]
       }
+    ],
+    currentTheme: {
+      id: 0,
+      type: "light",
+      background: "#ffffff",
+      overlay: "#f8f9fa",
+      border: "rgba(0, 0, 0, 0.1)"
+    },
+    themes: [
+      {
+        id: 0,
+        type: "light",
+        background: "#ffffff",
+        overlay: "#f8f9fa",
+        border: "rgba(0, 0, 0, 0.1)"
+      },
+      {
+        id: 1,
+        type: "dark",
+        background: "#000000",
+        overlay: "gray",
+        border: "rgba(100, 100, 100, 0.675)"
+      },
+      {
+        id: 2,
+        type: "dark",
+        background: "#000000",
+        overlay: "gray",
+        border: "rgba(100, 100, 100, 0.675)"
+      },
+      {
+        id: 3,
+        type: "dark",
+        background: "#000000",
+        overlay: "gray",
+        border: "rgba(100, 100, 100, 0.675)"
+      },
+      {
+        id: 4,
+        type: "dark",
+        background: "#000000",
+        overlay: "gray",
+        border: "rgba(100, 100, 100, 0.675)"
+      }
     ]
   },
+  mutations: {
+    selectTheme(state, id) {
+      state.currentTheme = state.themes[id];
+    }
+  },
   getters: {
+    currentTheme(state) {
+      return state.currentTheme;
+    },
+    textColor(state) {
+      if (state.currentTheme.type == "light") {
+        return { 'text-dark': true, 'text-light': false }
+      } else {
+        return { 'text-light': true, 'text-dark': false }
+      }
+    },
+    themes(state) {
+      return state.themes;
+    },
     projects(state) {
       let projects = [];
 

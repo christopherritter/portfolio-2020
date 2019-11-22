@@ -1,6 +1,26 @@
 <template>
-  <div id="app">
-    <b-navbar id="nav" fixed="top" variant="light" toggleable="lg" type="light">
+  <div
+    id="app"
+    :class="textColor"
+    :style="
+      'background-color: ' +
+        themes[currentTheme.id].overlay +
+        '; border-color: ' +
+        themes[currentTheme.id].border
+    "
+  >
+    <b-navbar
+      id="nav"
+      fixed="top"
+      toggleable="lg"
+      :type="themes[currentTheme.id].type"
+      :style="
+        'background-color: ' +
+          themes[currentTheme.id].overlay +
+          '; border-color: ' +
+          themes[currentTheme.id].border
+      "
+    >
       <b-navbar-brand to="/">Christopher Ritter</b-navbar-brand>
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
       <b-collapse id="nav-collapse" is-nav>
@@ -15,8 +35,20 @@
         </b-navbar-nav>
       </b-collapse>
     </b-navbar>
-    <router-view />
-    <b-container id="footer" class="text-light bg-dark" fluid>
+    <section
+      id="content"
+      :class="textColor"
+      :style="
+        'background-color: ' +
+          themes[currentTheme.id].background +
+          '; border-color: ' +
+          themes[currentTheme.id].border
+      "
+    >
+      <theme-picker />
+      <router-view />
+    </section>
+    <b-container id="footer" fluid>
       <b-container class="download-resume">
         <b-row>
           <b-col class="download-resume-header">
@@ -107,8 +139,17 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
+import ThemePicker from "./components/ThemePicker";
+
 export default {
-  name: "app"
+  name: "app",
+  components: {
+    "theme-picker": ThemePicker
+  },
+  computed: {
+    ...mapGetters(["textColor", "currentTheme", "themes"])
+  }
 };
 </script>
 
@@ -119,7 +160,6 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   font-size: 1.25rem;
   line-height: 1.65;
-  color: #222222;
 }
 
 #nav {
@@ -134,6 +174,17 @@ export default {
 
 #nav .active.router-link-active {
   font-family: "Montserrat SemiBold", Helvetica, Arial, sans-serif;
+}
+
+#content {
+  position: relative;
+}
+
+#content .theme-picker {
+  position: fixed;
+  top: 3em;
+  right: 0;
+  z-index: 10;
 }
 
 #footer {
@@ -218,6 +269,5 @@ p {
   height: 24px;
   margin: 0.5em 0.25em;
   padding: 0;
-  fill: #ffffff; /* not working with b-image */
 }
 </style>
