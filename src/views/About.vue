@@ -60,6 +60,9 @@ export default {
 </script>
 
 <style scoped>
+.about {
+  padding-bottom: 10em;
+}
 .about-image {
   width: 100%;
   height: 22em;

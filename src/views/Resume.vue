@@ -1,5 +1,5 @@
 <template>
-  <b-container class="about">
+  <b-container class="resume">
     <b-row>
       <b-col>
         <h1 class="resume-name">Christopher Ritter</h1>
@@ -21,10 +21,13 @@
             sm="6"
             xs="12"
             class="bullet-item"
-            v-for="skill in skillList.slice(0, 10)"
+            v-for="skill in skills.slice(0, 10)"
             v-bind:key="skill.id"
           >
-            <div class="bullet"></div>
+            <div
+              class="bullet"
+              :style="'border-color: ' + themes[currentTheme.id].border"
+            ></div>
             <div class="bullet-text">{{ skill.label }}</div>
           </b-col>
         </b-row>
@@ -39,10 +42,10 @@
           <b-col>
             <div
               class="bullet-item"
-              v-for="tool in toolList.slice(0, 5)"
+              v-for="tool in tools.slice(0, 5)"
               v-bind:key="tool.id"
             >
-              <div class="bullet"></div>
+              <div class="bullet" :style="'border-color: ' + themes[currentTheme.id].border"></div>
               <div class="bullet-text">{{ tool.label }}</div>
             </div>
           </b-col>
@@ -58,10 +61,10 @@
           <b-col>
             <div
               class="bullet-item"
-              v-for="technology in techList.slice(0, 5)"
+              v-for="technology in tech.slice(0, 5)"
               v-bind:key="technology.id"
             >
-              <div class="bullet"></div>
+              <div class="bullet" :style="'border-color: ' + themes[currentTheme.id].border"></div>
               <div class="bullet-text">{{ technology.label }}</div>
             </div>
           </b-col>
@@ -90,26 +93,27 @@
         </b-col>
       </b-row>
 
-      <div class="company-tasks" v-for="task in taskList" v-bind:key="task.id">
-        <b-row v-if="company.name == task.employer" class="tasks">
-          <b-col>
-            <div class="bullet-item">
-              <div class="bullet"></div>
-              <div class="bullet-text">{{ task.description }}</div>
-            </div>
-          </b-col>
-        </b-row>
-      </div>
+      <b-row
+        v-for="task in getTasksByEmployer(company.name)"
+        v-bind:key="task.id"
+        class="company-task"
+      >
+        <b-col>
+          <div class="bullet-item">
+            <div class="bullet" :style="'border-color: ' + themes[currentTheme.id].border"></div>
+            <div class="bullet-text">{{ task.description }}</div>
+          </div>
+        </b-col>
+      </b-row>
     </div>
   </b-container>
 </template>
 
 <script>
-import store from "@/store";
+import { mapGetters, mapMutations } from "vuex";
 
 export default {
   name: "resume",
-  store,
   data() {
     return {
       loading: false,
@@ -123,18 +127,14 @@ export default {
     this.scrollToTop();
   },
   computed: {
-    taskList() {
-      return this.$store.getters.tasks;
-    },
-    skillList() {
-      return this.$store.getters.skills;
-    },
-    toolList() {
-      return this.$store.getters.tools;
-    },
-    techList() {
-      return this.$store.getters.tech;
-    }
+    ...mapGetters([
+      "currentTheme",
+      "themes",
+      "skills",
+      "tools",
+      "tech",
+      "getTasksByEmployer"
+    ])
   },
   methods: {
     scrollToTop() {
@@ -145,6 +145,9 @@ export default {
 </script>
 
 <style scoped>
+.resume {
+  padding-bottom: 10em;
+}
 .resume-name {
   margin-top: 10rem;
   margin-bottom: 0;
@@ -173,7 +176,8 @@ export default {
   font-family: "Montserrat SemiBold", Helvetica, Arial, sans-serif;
 }
 .bullet {
-  border: 1px solid #222222;
+  border-width: 1px;
+  border-style: solid;
   width: 0.5em;
   height: 0.5em;
   border-radius: 50%;

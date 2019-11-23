@@ -7,14 +7,12 @@ export default new Vuex.Store({
   state: {
     employers: [
       {
-        id: 0,
         title: "User Experience Designer",
         name: "Jenzabar, Inc.",
         startDate: 2015,
         endDate: "Now",
         projects: [
           {
-            id: 0,
             name: "Find Your Calling",
             img: "/img/FYC.png",
             description:
@@ -28,28 +26,24 @@ export default new Vuex.Store({
                 tech: ["Bootstrap", "Sass", "Handlebars"],
                 deliverables: [
                   {
-                    id: 0,
                     title: "The All-New Career Explorer",
                     img: "/img/FYC_Career-Explorer.png",
                     description:
                       "The updates to Find Your Calling included an entirely new way to navigate career choices. This was called the Career Explorer given its ability to search and filter career choices."
                   },
                   {
-                    id: 1,
                     title: "The Improved Private Profile",
                     img: "/img/FYC_Private-Profile.png",
                     description:
                       "The private profile was redesigned to focus on the educational choices for each of the career paths. This was part of a larger effort to connect prospective students to eductional institutions."
                   },
                   {
-                    id: 2,
                     title: "Additional School Filters",
                     img: "/img/FYC_Schools-Filter.png",
                     description:
                       "Additional filters were added to the school listing for each of the career paths. These were designed for both desktop and mobile devices to align with the eductional instutitions below the filters."
                   },
                   {
-                    id: 3,
                     title: "Big Data School Headers",
                     img: "/img/FYC_School-Header.png",
                     description:
@@ -65,7 +59,6 @@ export default new Vuex.Store({
                 tech: ["NodeJS", "Bootstrap", "Sass", "Handlebars"],
                 deliverables: [
                   {
-                    id: 0,
                     title: "FYC Design System",
                     img: "/img/FYC_Pattern-Lab.png",
                     description:
@@ -80,7 +73,6 @@ export default new Vuex.Store({
                 tools: ["Google Analytics"],
                 deliverables: [
                   {
-                    id: 0,
                     title: "Google Analytics Reporting",
                     img: "/img/FYC_Google-Reports.png",
                     description:
@@ -92,7 +84,6 @@ export default new Vuex.Store({
             path: "fyc"
           },
           {
-            id: 1,
             name: "Jenzabar ICS 9",
             img: "/img/JICS9.png",
             description:
@@ -106,28 +97,24 @@ export default new Vuex.Store({
                 tech: ["ASCX", "Bootstrap", "Sass", "jQuery", "FooTable"],
                 deliverables: [
                   {
-                    id: 0,
                     title: "CRM Student Portlets",
                     img: "/img/JICS9_CRM-Student.png",
                     description:
                       "Implemented responsive layouts for CRM Student portlets which provide online access to student information. Used Bootstrap and various JavaScript libraries (e.g., jQuery and FooTable) to implement breakpoints within ASCX templates."
                   },
                   {
-                    id: 1,
                     title: "CRM Candidate Portlets",
                     img: "/img/JICS9_CRM-Candidate.png",
                     description:
                       "Implemented responsive layouts for CRM Candidate portlets which provide online access to information about potential candidates. Used Bootstrap and various JavaScript libraries (e.g., jQuery and FooTable) to implement breakpoints within ASCX templates."
                   },
                   {
-                    id: 2,
                     title: "CRM Staff Portlets",
                     img: "/img/JICS9_CRM-Staff.png",
                     description:
                       "Implemented responsive layouts for CRM Staff portlets which provide online access to employment information. Used Bootstrap and various JavaScript libraries (e.g., jQuery and FooTable) to implement breakpoints within ASCX templates."
                   },
                   {
-                    id: 3,
                     title: "CRM Faculty Portlets",
                     img: "/img/JICS9_CRM-Faculty.png",
                     description:
@@ -149,7 +136,6 @@ export default new Vuex.Store({
                 tech: ["ASCX", "Bootstrap", "Sass", "jQuery"],
                 deliverables: [
                   {
-                    id: 0,
                     title: "Jenzabar ICS Design System",
                     img: "/img/JICS9_CX-Mobile-Theme.png",
                     description:
@@ -171,7 +157,6 @@ export default new Vuex.Store({
                 tech: ["ASCX", "Bootstrap", "Sass", "jQuery"],
                 deliverables: [
                   {
-                    id: 0,
                     title: "Jenzabar ICS Design System",
                     img: "/img/JICS9_Design-System.png",
                     description:
@@ -183,7 +168,6 @@ export default new Vuex.Store({
             path: "jics9"
           },
           {
-            id: 2,
             name: "Jenzabar CX 10",
             img: "/img/CX10.png",
             description:
@@ -205,28 +189,24 @@ export default new Vuex.Store({
                 tech: ["QT", "QSS"],
                 deliverables: [
                   {
-                    id: 0,
                     title: "CX 10 Home Screen",
                     img: "/img/CX10_Home.png",
                     description:
                       "The home screen for CX 10 provides users with a searchable directory of their available applications. When the user launches an application it appears on a recently viewed list next to the directory."
                   },
                   {
-                    id: 1,
                     title: "Login and Release Selection",
                     img: "/img/CX10_Installer.png",
                     description:
                       "The desktop version of CX10 provided customers with secure access to their institutional data. After signing in, users have the option to select from multiple instances of their data (known as releases)."
                   },
                   {
-                    id: 2,
                     title: "Personalized Fonts and Colors",
                     img: "/img/CX10_User-Settings.png",
                     description:
                       "The settings screen enabled users to customize the font sizes and colors of their local client. Theme settings can be saved and loaded from a separate file to help enforce consistency at customer sites."
                   },
                   {
-                    id: 3,
                     title: "Interactive Prototypes",
                     img: "/img/CX10_Prototypes.png",
                     description:
@@ -238,7 +218,6 @@ export default new Vuex.Store({
             path: "cx10"
           },
           {
-            id: 3,
             name: "Jenzabar JX",
             img: "/img/JX.png",
             description:
@@ -267,7 +246,6 @@ export default new Vuex.Store({
         ]
       },
       {
-        id: 1,
         title: "Interface Design Consultant",
         name: "Crown Equipment",
         startDate: 2015,
@@ -275,7 +253,6 @@ export default new Vuex.Store({
         location: "New Bremen, Ohio",
         projects: [
           {
-            id: 0,
             name: "Crown.com",
             description: "Primary website for Crown, Inc.",
             tasks: [
@@ -287,7 +264,6 @@ export default new Vuex.Store({
                 tech: ["Bootstrap", "Sass", "Grunt"],
                 deliverables: [
                   {
-                    id: 0,
                     title: "Crown Industries Rebranding",
                     img: "/img/Crown-Website.png",
                     description:
@@ -301,7 +277,6 @@ export default new Vuex.Store({
         ]
       },
       {
-        id: 2,
         title: "User Experience Designer",
         name: "Trimble Navigation",
         startDate: 2014,
@@ -309,38 +284,32 @@ export default new Vuex.Store({
         location: "Huber Heights, Ohio",
         projects: [
           {
-            id: 0,
             name: "NextGen",
             description: "The next generation of machine control.",
             tasks: [
               {
-                id: 0,
                 description:
                   "Brainstormed concepts with machine operators using Gamestorming techniques to generate new ideas.",
                 skills: ["UX", "Brainstorming"]
               },
               {
-                id: 1,
                 description:
                   "Developed HTML/Bootstrap prototypes for field testing with machine operators.",
                 skills: ["UX", "UI", "Research", "Prototyping"],
                 tech: ["Bootstrap"]
               },
               {
-                id: 2,
                 description:
                   "Conducted field research of the construction industry across the US and Canada, providing top level reports of my findings to primary stakeholders.",
                 skills: ["UX", "Research", "Analysis", "Reporting"]
               },
               {
-                id: 3,
                 description:
                   "Modeled an excavator and work site using Trimble SketchUp.",
                 skills: ["UI", "3D Modeling"],
                 tools: ["SketchUp"]
               },
               {
-                id: 4,
                 description:
                   "Provided design assets for Android/Vuforia prototypes, and for production within an Agile environment, which included style guides and custom icons for Android applications.",
                 skills: [
@@ -358,7 +327,6 @@ export default new Vuex.Store({
         ]
       },
       {
-        id: 3,
         title: "Idea Designer",
         name: "LexisNexis",
         startDate: 2010,
@@ -366,30 +334,25 @@ export default new Vuex.Store({
         location: "Miamisburg, Ohio",
         projects: [
           {
-            id: 0,
             name: "Lexis Advance",
             description: "The next generation of legal documentation",
             tasks: [
               {
-                id: 0,
                 description:
                   "Created annotated wireframes to support the development of Lexis Advance.",
                 skills: ["UX"]
               },
               {
-                id: 1,
                 description:
                   "Conducted concept testing and usability research with legal professionals, and delivered top level reports of my discussions to primary stakeholders. ",
                 skills: ["UX", "Testing", "Research", "Reporting"]
               },
               {
-                id: 2,
                 description:
                   "Lead brainstorming workshops with legal professionals using Gamestorming techniques to generate new ideas.",
                 skills: ["UX", "Brainstorming"]
               },
               {
-                id: 3,
                 description:
                   "Founding member of the Customer Discovery & Innovation team which designed, prototyped, and tested the most popular concepts from our innovation pipeline.",
                 skills: [
@@ -401,7 +364,6 @@ export default new Vuex.Store({
                 ]
               },
               {
-                id: 4,
                 description:
                   "Design Lead for several innovative products including Lexis Answers.",
                 skills: [
@@ -419,7 +381,6 @@ export default new Vuex.Store({
         ]
       },
       {
-        id: 4,
         title: "Experience Planner",
         name: "Bridge Worldwide",
         startDate: 2009,
@@ -427,42 +388,35 @@ export default new Vuex.Store({
         location: "Cincinnati, Ohio",
         projects: [
           {
-            id: 0,
             name: "Pearle Vision",
             description: "Main website for Pearl Vision, inc.",
             tasks: [
               {
-                id: 0,
                 description:
                   "Planned the digital experience of social, mobile, and web applications for corporate clients that included P&G, Pearle Vision, and Red Bull.",
                 skills: ["UX", "Social Media"]
               },
               {
-                id: 1,
                 description:
                   "Lead brainstorming sessions with creative, technical, and business leads to generate new ideas.",
                 skills: ["UX", "Brainstorming"]
               },
               {
-                id: 2,
                 description:
                   "Illustrated user flows, site maps, and wireframes to assist the design and development teams.",
                 skills: ["UX"]
               },
               {
-                id: 3,
                 description:
                   "Documented features and functionality for project management, and provided competitive analysis of similar products on the market.",
                 skills: ["UX"]
               },
               {
-                id: 4,
                 description:
                   "Conducted usability testing with potential customers and reported insights back to the team.",
                 skills: ["UX", "Research", "Analysis", "Reporting"]
               },
               {
-                id: 5,
                 description:
                   "Presented initial concepts, customer feedback, and other deliverables to the clients.",
                 skills: ["UX"]
@@ -475,10 +429,7 @@ export default new Vuex.Store({
     ],
     currentTheme: {
       id: 0,
-      type: "light",
-      background: "#ffffff",
-      overlay: "#f8f9fa",
-      border: "rgba(0, 0, 0, 0.1)"
+      type: "light"
     },
     themes: [
       {
@@ -486,35 +437,40 @@ export default new Vuex.Store({
         type: "light",
         background: "#ffffff",
         overlay: "#f8f9fa",
-        border: "rgba(0, 0, 0, 0.1)"
+        border: "rgba(0, 0, 0, 0.1)",
+        link: "#007bff"
       },
       {
         id: 1,
         type: "dark",
         background: "#000000",
         overlay: "gray",
-        border: "rgba(100, 100, 100, 0.675)"
+        border: "rgba(100, 100, 100, 0.675)",
+        link: "orange"
       },
       {
         id: 2,
         type: "dark",
         background: "#000000",
         overlay: "gray",
-        border: "rgba(100, 100, 100, 0.675)"
+        border: "rgba(100, 100, 100, 0.675)",
+        link: "yellow"
       },
       {
         id: 3,
         type: "dark",
         background: "#000000",
         overlay: "gray",
-        border: "rgba(100, 100, 100, 0.675)"
+        border: "rgba(100, 100, 100, 0.675)",
+        link: "green"
       },
       {
         id: 4,
         type: "dark",
         background: "#000000",
         overlay: "gray",
-        border: "rgba(100, 100, 100, 0.675)"
+        border: "rgba(100, 100, 100, 0.675)",
+        link: "#007bff"
       }
     ]
   },
@@ -529,9 +485,16 @@ export default new Vuex.Store({
     },
     textColor(state) {
       if (state.currentTheme.type == "light") {
-        return { 'text-dark': true, 'text-light': false }
+        return { "text-dark": true, "text-light": false };
       } else {
-        return { 'text-light': true, 'text-dark': false }
+        return { "text-light": true, "text-dark": false };
+      }
+    },
+    outlineColor(state) {
+      if (state.currentTheme.type == "light") {
+        return "outline-dark"
+      } else {
+        return "outline-light"
       }
     },
     themes(state) {
@@ -661,6 +624,8 @@ export default new Vuex.Store({
     },
     tasks(state) {
       let tasks = [];
+
+      // let index = a.findIndex(x => x.prop2 ==="yutu");
 
       for (let e = 0; e < state.employers.length; e++) {
         if (state.employers[e].projects) {
@@ -815,6 +780,35 @@ export default new Vuex.Store({
       }
 
       return technology;
+    },
+    getTasksByEmployer: (state, getters) => name => {
+      let tasks = [];
+      let e = state.employers.findIndex(employer => employer.name === name);
+
+      if (state.employers[e].projects) {
+        for (let p = 0; p < state.employers[e].projects.length; p++) {
+          if (state.employers[e].projects[p].tasks) {
+            for (
+              let t = 0;
+              t < state.employers[e].projects[p].tasks.length;
+              t++
+            ) {
+              let task = {
+                description:
+                  state.employers[e].projects[p].tasks[t].description,
+                deliverables:
+                  state.employers[e].projects[p].tasks[t].deliverables || [],
+                project: state.employers[e].projects[p].name,
+                employer: state.employers[e].name
+              };
+
+              tasks.push(task);
+            }
+          }
+        }
+      }
+
+      return tasks;
     }
   }
 });

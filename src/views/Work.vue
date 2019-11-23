@@ -33,6 +33,7 @@ export default {
 <style scoped>
 .work {
   padding-top: 10em;
+  padding-bottom: 6em;
 }
 .about-me {
   margin: 0 0 6em 0;

@@ -48,7 +48,17 @@
       <theme-picker />
       <router-view />
     </section>
-    <b-container id="footer" fluid>
+    <b-container
+      id="footer"
+      fluid
+      :class="textColor"
+      :style="
+        'background-color: ' +
+          themes[currentTheme.id].overlay +
+          '; border-color: ' +
+          themes[currentTheme.id].border
+      "
+    >
       <b-container class="download-resume">
         <b-row>
           <b-col class="download-resume-header">
@@ -65,14 +75,14 @@
           <b-col class="download-resume-buttons">
             <b-button
               size="lg"
-              variant="primary"
+              :style="'background-color: ' + themes[currentTheme.id].link + '; border-color: transparent'"
               href="https://app.box.com/s/gws18gc1hna8g7tnri88ncjeev4vthtm"
               target="_blank"
               >Adobe PDF</b-button
             >
             <b-button
               size="lg"
-              variant="outline-light"
+              :variant="outlineColor"
               href="https://app.box.com/s/vighxx386p10zqthjs22yjyoitkfuhnq"
               target="_blank"
               >Microsoft Word</b-button
@@ -96,6 +106,7 @@
                 :src="`/img/email.svg`"
                 class="footer-icon"
                 alt="Email"
+                style="fill: salmon"
               ></b-img>
             </b-link>
             <b-link
@@ -148,7 +159,7 @@ export default {
     "theme-picker": ThemePicker
   },
   computed: {
-    ...mapGetters(["textColor", "currentTheme", "themes"])
+    ...mapGetters(["textColor", "outlineColor", "currentTheme", "themes"])
   }
 };
 </script>
@@ -190,7 +201,7 @@ export default {
 #footer {
   font-size: 0.875rem;
   padding: 0;
-  margin: 150px 0 0 0;
+  margin: 0;
 }
 
 #footer .download-resume h3 {

@@ -2,7 +2,16 @@
   <div class="jenzabar-projects">
     <b-row class="project" v-for="project in projects" v-bind:key="project.id">
       <b-col>
-        <div class="project-image bg-light" v-if="project.img">
+        <div
+          class="project-image"
+          v-if="project.img"
+          :style="
+            'background-color: ' +
+              themes[currentTheme.id].overlay +
+              '; border-color: ' +
+              themes[currentTheme.id].border
+          "
+        >
           <b-link :to="'projects/' + project.path">
             <b-img :src="project.img" fluid :alt="project.name"></b-img>
           </b-link>
@@ -13,7 +22,10 @@
           </b-col>
           <b-col col lg="9" md="8" sm="12">
             <p class="project-description">{{ project.description }}</p>
-            <b-link :to="'projects/' + project.path" class="project-path"
+            <b-link
+              :to="'projects/' + project.path"
+              class="project-path"
+              :style="'color: ' + themes[currentTheme.id].link"
               >More info</b-link
             >
           </b-col>
@@ -25,6 +37,7 @@
 
 <script>
 import store from "@/store";
+import { mapGetters } from "vuex";
 
 export default {
   name: "JenzabarProjects",
@@ -40,6 +53,9 @@ export default {
     // fetch the data when the view is created and the data is
     // already being observed
     this.fetchData();
+  },
+  computed: {
+    ...mapGetters(["currentTheme", "themes"])
   },
   methods: {
     fetchData() {
@@ -71,11 +87,8 @@ li {
   display: inline-block;
   margin: 0 10px;
 }
-a {
-  color: #2f89fc;
-}
 .project {
-  margin-bottom: 72px;
+  margin-bottom: 3em;
 }
 .project-image {
   width: 100%;

@@ -3,7 +3,11 @@
     <h2 class="project-name">{{ project.name }}</h2>
     <p class="project-description">{{ project.description }}</p>
 
-    <div class="project-image bg-light" v-if="project.img">
+    <div
+      class="project-image"
+      v-if="project.img"
+      :style="'background-color: ' + themes[currentTheme.id].overlay"
+    >
       <b-img :src="project.img" fluid :alt="project.name"></b-img>
     </div>
 
@@ -12,7 +16,10 @@
       <b-row class="tasks" v-for="task in project.tasks" v-bind:key="task.id">
         <b-col>
           <div class="bullet-item">
-            <div class="bullet"></div>
+            <div
+              class="bullet"
+              :style="'border-color: ' + themes[currentTheme.id].border"
+            ></div>
             <div class="bullet-text">{{ task.description }}</div>
           </div>
         </b-col>
@@ -22,7 +29,12 @@
     <hr />
 
     <b-row class="project-abilities">
-      <b-col class="project-skills" md="6" sm="12" v-if="project.skills.length > 0">
+      <b-col
+        class="project-skills"
+        md="6"
+        sm="12"
+        v-if="project.skills.length > 0"
+      >
         <b-row>
           <b-col sm="6" xs="12">
             <h6 class="bullet-header">Skills</h6>
@@ -30,17 +42,24 @@
         </b-row>
         <b-row>
           <b-col
-            sm="6" xs="12"
+            sm="6"
+            xs="12"
             class="bullet-item"
             v-for="skill in project.skills"
             v-bind:key="skill.id"
           >
-            <div class="bullet"></div>
+            <div class="bullet" :style="'border-color: ' + themes[currentTheme.id].border"></div>
             <div class="bullet-text">{{ skill.label }}</div>
           </b-col>
         </b-row>
       </b-col>
-      <b-col class="project-tools" md="3" sm="6" xs="12" v-if="project.tools.length > 0">
+      <b-col
+        class="project-tools"
+        md="3"
+        sm="6"
+        xs="12"
+        v-if="project.tools.length > 0"
+      >
         <b-row>
           <b-col>
             <h6 class="bullet-header">Tools</h6>
@@ -53,13 +72,19 @@
               v-for="tool in project.tools"
               v-bind:key="tool.id"
             >
-              <div class="bullet"></div>
+              <div class="bullet" :style="'border-color: ' + themes[currentTheme.id].border"></div>
               <div class="bullet-text">{{ tool.label }}</div>
             </div>
           </b-col>
         </b-row>
       </b-col>
-      <b-col class="project-tech" md="3" sm="6" xs="12" v-if="project.tech.length > 0">
+      <b-col
+        class="project-tech"
+        md="3"
+        sm="6"
+        xs="12"
+        v-if="project.tech.length > 0"
+      >
         <b-row>
           <b-col>
             <h6 class="bullet-header">Tech</h6>
@@ -72,7 +97,7 @@
               v-for="technology in project.tech"
               v-bind:key="technology.id"
             >
-              <div class="bullet"></div>
+              <div class="bullet" :style="'border-color: ' + themes[currentTheme.id].border"></div>
               <div class="bullet-text">{{ technology.label }}</div>
             </div>
           </b-col>
@@ -89,7 +114,11 @@
         <b-col>
           <hr />
           <h4>{{ deliverable.title }}</h4>
-          <div class="deliverable-image bg-light" v-if="deliverable.img">
+          <div
+            class="deliverable-image"
+            v-if="deliverable.img"
+            :style="'background-color: ' + themes[currentTheme.id].overlay"
+          >
             <b-img
               :src="deliverable.img"
               fluid
@@ -105,6 +134,7 @@
 
 <script>
 import store from "@/store";
+import { mapGetters } from "vuex";
 
 export default {
   name: "project",
@@ -124,6 +154,9 @@ export default {
   watch: {
     // call again the method if the route changes
     $route: "fetchData"
+  },
+  computed: {
+    ...mapGetters(["currentTheme", "themes"])
   },
   methods: {
     fetchData() {
@@ -146,8 +179,12 @@ export default {
 hr {
   margin: 3em 0;
 }
+.project {
+  padding-top: 3em;
+  padding-bottom: 8em;
+}
 .project-name {
-  margin: 4em 0 0.5em 0;
+  margin: 2em 0 0.5em 0;
 }
 .project-skills,
 .project-tools,
