@@ -75,7 +75,11 @@
           <b-col class="download-resume-buttons">
             <b-button
               size="lg"
-              :style="'background-color: ' + themes[currentTheme.id].link + '; border-color: transparent'"
+              :style="
+                'background-color: ' +
+                  themes[currentTheme.id].link +
+                  '; border-color: transparent'
+              "
               href="https://app.box.com/s/gws18gc1hna8g7tnri88ncjeev4vthtm"
               target="_blank"
               >Adobe PDF</b-button
@@ -102,45 +106,28 @@
               class="footer-icon-button"
               target="_blank"
             >
-              <b-img
-                :src="`/img/email.svg`"
-                class="footer-icon"
-                alt="Email"
-                style="fill: salmon"
-              ></b-img>
+              <email-icon class="footer-icon-svg" />
             </b-link>
             <b-link
               href="http://www.twitter.com/geddon"
               class="footer-icon-button"
               target="_blank"
             >
-              <b-img
-                :src="`/img/twitter.svg`"
-                class="footer-icon"
-                alt="Twitter"
-              ></b-img>
+              <twitter-icon class="footer-icon-svg" />
             </b-link>
             <b-link
               href="http://www.github.com/christopherritter"
               class="footer-icon-button"
               target="_blank"
             >
-              <b-img
-                :src="`/img/github-face.svg`"
-                class="footer-icon"
-                alt="Github"
-              ></b-img>
+              <github-icon class="footer-icon-svg" />
             </b-link>
             <b-link
               href="http://www.linkedin.com/in/christopherritter"
               class="footer-icon-button"
               target="_blank"
             >
-              <b-img
-                :src="`/img/linkedin.svg`"
-                class="footer-icon"
-                alt="LinkedIn"
-              ></b-img>
+              <twitter-icon class="footer-icon-svg" />
             </b-link>
           </b-col>
         </b-row>
@@ -153,13 +140,40 @@
 import { mapGetters } from "vuex";
 import ThemePicker from "./components/ThemePicker";
 
+import EmailIcon from "../public/img/email.svg";
+import GithubIcon from "../public/img/github-face.svg";
+import LinkedInIcon from "../public/img/linkedin.svg";
+import PinterestIcon from "../public/img/pinterest.svg";
+import TwitterIcon from "../public/img/twitter.svg";
+
 export default {
   name: "app",
   components: {
-    "theme-picker": ThemePicker
+    "theme-picker": ThemePicker,
+    "email-icon": EmailIcon,
+    "github-icon": GithubIcon,
+    "linkedin-icon": LinkedInIcon,
+    "pinterest-icon": PinterestIcon,
+    "twitter-icon": TwitterIcon
   },
   computed: {
     ...mapGetters(["textColor", "outlineColor", "currentTheme", "themes"])
+  },
+  watch: {
+    currentTheme() {
+      let footerIcons = document.getElementsByClassName("footer-icon-svg");
+      let changeFill = this.changeFill;
+      footerIcons.forEach(changeFill);
+    }
+  },
+  methods: {
+    changeFill(item) {
+      let themes = this.themes;
+      let currentTheme = this.currentTheme;
+      item.childNodes.forEach(function(path) {
+        path.style.fill = themes[currentTheme.id].link;
+      });
+    }
   }
 };
 </script>
