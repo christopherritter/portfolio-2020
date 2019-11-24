@@ -429,48 +429,88 @@ export default new Vuex.Store({
     ],
     currentTheme: {
       id: 0,
-      type: "light"
+      type: "dark",
+      textClass: "text-light",
+      background: "#222831",
+      overlay: "#393e46",
+      border: "rgba(255,255,255,0.25)",
+      link: "#a3f7bf",
+      footerType: "light",
+      footerTextClass: "text-light",
+      footerOutlineClass: "outline-light",
+      footerBackground: "#29a19c",
+      footerIcon: "#f8f9fa"
     },
     themes: [
       {
         id: 0,
-        type: "light",
-        background: "#ffffff",
-        overlay: "#f8f9fa",
-        border: "rgba(0, 0, 0, 0.1)",
-        link: "#007bff"
+        type: "dark",
+        textClass: "text-light",
+        background: "#222831",
+        overlay: "#393e46",
+        border: "rgba(255,255,255,0.25)",
+        link: "#a3f7bf",
+        footerType: "light",
+        footerTextClass: "text-light",
+        footerOutlineClass: "outline-light",
+        footerBackground: "#29a19c",
+        footerIcon: "#f8f9fa"
       },
       {
         id: 1,
-        type: "dark",
-        background: "#000000",
-        overlay: "gray",
-        border: "rgba(100, 100, 100, 0.675)",
-        link: "orange"
+        type: "light",
+        textClass: "text-dark",
+        background: "#f9f7f7",
+        overlay: "#dbe2ef",
+        border: "rgba(0,0,0,0.25)",
+        link: "#112d4e",
+        footerType: "dark",
+        footerTextClass: "text-light",
+        footerOutlineClass: "outline-light",
+        footerBackground: "#3f72af",
+        footerIcon: "#f8f9fa"
       },
       {
         id: 2,
         type: "dark",
-        background: "#000000",
-        overlay: "gray",
-        border: "rgba(100, 100, 100, 0.675)",
-        link: "yellow"
+        textClass: "text-light",
+        background: "#621055",
+        overlay: "#b52b65",
+        border: "rgba(255,255,255,0.25)",
+        link: "#ffa372",
+        footerType: "dark",
+        footerTextClass: "text-light",
+        footerOutlineClass: "outline-light",
+        footerBackground: "#ed6663",
+        footerIcon: "#f8f9fa"
       },
       {
         id: 3,
         type: "dark",
-        background: "#000000",
-        overlay: "gray",
-        border: "rgba(100, 100, 100, 0.675)",
-        link: "green"
+        textClass: "text-light",
+        background: "#090057",
+        overlay: "#57007e",
+        border: "rgba(255,255,255,0.25)",
+        link: "#ffa069",
+        footerType: "dark",
+        footerTextClass: "text-light",
+        footerOutlineClass: "outline-light",
+        footerBackground: "#c400c6",
+        footerIcon: "#f8f9fa"
       },
       {
         id: 4,
-        type: "dark",
-        background: "#000000",
-        overlay: "gray",
-        border: "rgba(100, 100, 100, 0.675)",
-        link: "#007bff"
+        type: "light",
+        textClass: "text-dark",
+        background: "#f8f8f8",
+        overlay: "#f1d6ab",
+        border: "rgba(0,0,0,0.25)",
+        link: "#2b2b28",
+        footerType: "dark",
+        footerTextClass: "text-dark",
+        footerOutlineClass: "outline-dark",
+        footerBackground: "#e3b04b",
+        footerIcon: "#343a40"
       }
     ]
   },
@@ -482,20 +522,6 @@ export default new Vuex.Store({
   getters: {
     currentTheme(state) {
       return state.currentTheme;
-    },
-    textColor(state) {
-      if (state.currentTheme.type == "light") {
-        return { "text-dark": true, "text-light": false };
-      } else {
-        return { "text-light": true, "text-dark": false };
-      }
-    },
-    outlineColor(state) {
-      if (state.currentTheme.type == "light") {
-        return "outline-dark"
-      } else {
-        return "outline-light"
-      }
     },
     themes(state) {
       return state.themes;
@@ -621,39 +647,6 @@ export default new Vuex.Store({
       }
 
       return projects;
-    },
-    tasks(state) {
-      let tasks = [];
-
-      // let index = a.findIndex(x => x.prop2 ==="yutu");
-
-      for (let e = 0; e < state.employers.length; e++) {
-        if (state.employers[e].projects) {
-          for (let p = 0; p < state.employers[e].projects.length; p++) {
-            if (state.employers[e].projects[p].tasks) {
-              for (
-                let t = 0;
-                t < state.employers[e].projects[p].tasks.length;
-                t++
-              ) {
-                let task = {
-                  id: t,
-                  description:
-                    state.employers[e].projects[p].tasks[t].description,
-                  deliverables:
-                    state.employers[e].projects[p].tasks[t].deliverables || [],
-                  project: state.employers[e].projects[p].name,
-                  employer: state.employers[e].name
-                };
-
-                tasks.push(task);
-              }
-            }
-          }
-        }
-      }
-
-      return tasks;
     },
     skills(state) {
       let skills = [];

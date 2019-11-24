@@ -1,7 +1,7 @@
 <template>
   <div
     id="app"
-    :class="textColor"
+    :class="themes[currentTheme.id].textClass"
     :style="
       'background-color: ' +
         themes[currentTheme.id].overlay +
@@ -37,13 +37,7 @@
     </b-navbar>
     <section
       id="content"
-      :class="textColor"
-      :style="
-        'background-color: ' +
-          themes[currentTheme.id].background +
-          '; border-color: ' +
-          themes[currentTheme.id].border
-      "
+      :style="'background-color: ' + themes[currentTheme.id].background"
     >
       <theme-picker />
       <router-view />
@@ -51,13 +45,8 @@
     <b-container
       id="footer"
       fluid
-      :class="textColor"
-      :style="
-        'background-color: ' +
-          themes[currentTheme.id].overlay +
-          '; border-color: ' +
-          themes[currentTheme.id].border
-      "
+      :class="themes[currentTheme.id].footerTextClass"
+      :style="'background-color: ' + themes[currentTheme.id].footerBackground"
     >
       <b-container class="download-resume">
         <b-row>
@@ -75,6 +64,7 @@
           <b-col class="download-resume-buttons">
             <b-button
               size="lg"
+              :variant="themes[currentTheme.id].footerType"
               :style="
                 'background-color: ' +
                   themes[currentTheme.id].link +
@@ -86,7 +76,7 @@
             >
             <b-button
               size="lg"
-              :variant="outlineColor"
+              :variant="themes[currentTheme.id].footerOutlineClass"
               href="https://app.box.com/s/vighxx386p10zqthjs22yjyoitkfuhnq"
               target="_blank"
               >Microsoft Word</b-button
@@ -157,7 +147,7 @@ export default {
     "twitter-icon": TwitterIcon
   },
   computed: {
-    ...mapGetters(["textColor", "outlineColor", "currentTheme", "themes"])
+    ...mapGetters(["currentTheme", "themes"])
   },
   watch: {
     currentTheme() {
@@ -169,9 +159,9 @@ export default {
   methods: {
     changeFill(item) {
       let themes = this.themes;
-      let currentTheme = this.currentTheme;
+      let footerIcon = this.currentTheme.footerIcon;
       item.childNodes.forEach(function(path) {
-        path.style.fill = themes[currentTheme.id].link;
+        path.style.fill = footerIcon;
       });
     }
   }
@@ -207,7 +197,7 @@ export default {
 
 #content .theme-picker {
   position: fixed;
-  top: 3em;
+  top: 3.75em;
   right: 0;
   z-index: 10;
 }
@@ -289,10 +279,10 @@ p {
   padding: 0;
 }
 
-.footer-icon {
+.footer-icon-svg {
   width: 24px;
   height: 24px;
-  margin: 0.5em 0.25em;
+  margin: 0.25em;
   padding: 0;
 }
 </style>
